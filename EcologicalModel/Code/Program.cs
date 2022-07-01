@@ -15,10 +15,10 @@ namespace EcologicalModel
 
             int width = 25;
             int height = 70;
-            int predatorCount = 150;
-            int preyCount = 250;
-            int obstacleCount = 100;
-            int iteretionsCount = 100;
+            int predatorCount = 20;
+            int preyCount = 150;
+            int obstacleCount = 75;
+            int iteretionsCount = 1000;
 
             Console.WriteLine("Use defult equals?" + "\nPress [Y] if yes." + "        " 
                 + "Press any other button if no.");
@@ -35,14 +35,19 @@ namespace EcologicalModel
             ocean.FilledArrayOutput();
             ocean.CellsCountOutput();
 
-            for (int i = 0; i < iteretionsCount; i++) 
+            for (int i = 1; i <= iteretionsCount; i++) 
             {
                 Thread.Sleep(500);
                 ocean.Iterate();
                 Console.Clear();
                 ocean.FilledArrayOutput();
-                ocean.CellsCountOutput();
                 Console.WriteLine("Iteretion: " + i);
+                if (!ocean.CellsCountOutput())
+                {
+                    Console.WriteLine("**********"+"\nGame Over!"+ "\n**********");
+                    break;
+                }
+                    
             }
 
             Console.ReadKey();

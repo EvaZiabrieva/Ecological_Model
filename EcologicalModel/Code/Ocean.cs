@@ -128,7 +128,7 @@ namespace EcologicalModel
             }
         }
 
-        public void CellsCountOutput()
+        public bool CellsCountOutput()
         {
             int predatorsCount = 0;
             int preysCount = 0;
@@ -156,6 +156,8 @@ namespace EcologicalModel
             Console.WriteLine("Predators: " + predatorsCount);
             Console.WriteLine("Prey: " + preysCount);
             Console.WriteLine("Obstacle: " + obsecleCount);
+
+            return preysCount > 0 && predatorsCount > 0;
         }
     }
 }

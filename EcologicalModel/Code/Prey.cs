@@ -18,7 +18,7 @@ namespace EcologicalModel
 
         public override char GetSymbol()
         {
-            return 'F';
+            return 'f';
         }
 
         public override void Iterate(Cell[,] cells, int i, int j)
