@@ -43,13 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cell.cs" />
-    <Compile Include="Coordinate.cs" />
-    <Compile Include="Obstacle.cs" />
-    <Compile Include="Ocean.cs" />
-    <Compile Include="Predator.cs" />
-    <Compile Include="Prey.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Code\Cell.cs" />
+    <Compile Include="Code\Coordinate.cs" />
+    <Compile Include="Code\Obstacle.cs" />
+    <Compile Include="Code\Ocean.cs" />
+    <Compile Include="Code\Predator.cs" />
+    <Compile Include="Code\Prey.cs" />
+    <Compile Include="Code\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
