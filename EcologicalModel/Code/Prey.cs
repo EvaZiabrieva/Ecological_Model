@@ -8,8 +8,12 @@ namespace EcologicalModel
 {
     class Prey : Cell
     {
+        private int reproduceCounter;
+        private readonly int maxTimeToReproduce = 6;
+
         public Prey(Random random) : base(random)
         {
+            reproduceCounter = maxTimeToReproduce;
         }
 
         public override char GetSymbol()
@@ -53,11 +57,25 @@ namespace EcologicalModel
                 if (isEmptyNeghbour || canEat)
                 {
                     cells[i + offsetHorizontalMovement, j + offsetVerticalMovement] = cells[i, j];
-                    cells[i, j] = null;
+                    if(reproduceCounter > 0)
+                    {
+                        cells[i, j] = null;
+                        reproduceCounter--;
+                    }
+                    else 
+                    {
+                        reproduceCounter = maxTimeToReproduce;
+                        cells[i, j] = CreteChild();
+                    }
                 }
                 if (canEat)
                     OnEat();
             }
+        }
+
+        protected virtual Cell CreteChild()
+        {
+            return new Prey(random);
         }
 
         public bool IsMoveAccordingToLimit(Cell[,] cells, int i, int j, int offsetI, int offsetJ)

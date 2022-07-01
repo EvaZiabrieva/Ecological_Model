@@ -8,12 +8,12 @@ namespace EcologicalModel
 {
     class Predator : Prey
     {
-        private int counter;
+        private int lifeTimeCounter;
         private readonly int maxLifeIteretionCount = 6;
 
         public Predator(Random random) : base(random)
         {
-            counter = maxLifeIteretionCount;
+            lifeTimeCounter = maxLifeIteretionCount;
         }
 
         public override char GetSymbol()
@@ -23,11 +23,11 @@ namespace EcologicalModel
 
         public override void Iterate(Cell[,] cells, int i, int j)
         {
-            if (counter > 0)
+            if (lifeTimeCounter > 0)
                 base.Iterate(cells, i, j);
             else
                 cells[i, j] = null;
-            counter--;
+            lifeTimeCounter--;
         }
 
         protected override bool CanEat(Cell cell)
@@ -37,7 +37,12 @@ namespace EcologicalModel
 
         protected override void OnEat()
         {
-            counter = maxLifeIteretionCount;
-        }      
+            lifeTimeCounter = maxLifeIteretionCount;
+        }
+
+        protected override Cell CreteChild()
+        {
+            return new Predator(random);
+        }
     }
 }
