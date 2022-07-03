@@ -8,7 +8,7 @@ namespace EcologicalModel
 {
     class Obstacle: Cell
     {
-        public Obstacle(Random random) : base(random)
+        public Obstacle(Random random, Ocean ocean) : base(random, ocean)
         {
         }
 
@@ -17,7 +17,7 @@ namespace EcologicalModel
             return '#';
         }
 
-        public override void Iterate(Cell[,] cells, int i, int j)
+        public override void Iterate(int i, int j)
         {
         }
     }

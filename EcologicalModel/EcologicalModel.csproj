@@ -50,6 +50,8 @@
     <Compile Include="Code\Predator.cs" />
     <Compile Include="Code\Prey.cs" />
     <Compile Include="Code\Program.cs" />
+    <Compile Include="ConsoleOceanDisplay.cs" />
+    <Compile Include="IOceanDisplay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

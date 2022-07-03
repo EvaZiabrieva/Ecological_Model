@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace EcologicalModel
 {
-    abstract class Cell
+    public abstract class Cell
     {
         protected readonly Random random;
-        public Cell(Random random)
+        protected readonly Ocean ocean;
+
+        public Cell(Random random, Ocean ocean)
         {
             this.random = random;
+            this.ocean = ocean;
         }
+
         public abstract char GetSymbol();
-        public abstract void Iterate(Cell[,] cells, int i, int j);
+        public abstract void Iterate(int i, int j);
     }
 }

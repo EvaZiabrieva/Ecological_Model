@@ -12,6 +12,7 @@ namespace EcologicalModel
         static void Main(string[] args)
         {
             Ocean ocean = new Ocean();
+            IOceanDisplay oceanDisplay = new ConsoleOceanDisplay(ocean);
 
             int width = 25;
             int height = 70;
@@ -20,31 +21,26 @@ namespace EcologicalModel
             int obstacleCount = 75;
             int iteretionsCount = 1000;
 
-            Console.WriteLine("Use defult equals?" + "\nPress [Y] if yes." + "        " 
-                + "Press any other button if no.");
+            oceanDisplay.InputOceanParameters(ref width, ref height, ref predatorCount, ref preyCount, ref obstacleCount,
+                    ref iteretionsCount);
 
-            if(Console.ReadKey().KeyChar.ToString().ToUpper() != "Y")
-            {
-               ocean.UserEquals(out width, out height, out predatorCount, out preyCount, out obstacleCount, out iteretionsCount);
-            }
-
-            Console.Clear();
+            oceanDisplay.ClearPrint();
 
             ocean.Initilize(width, height);
             ocean.ArrayFill(predatorCount, preyCount, obstacleCount);
-            ocean.FilledArrayOutput();
-            ocean.CellsCountOutput();
+            oceanDisplay.PrintOcean();
+            oceanDisplay.CellsCountOutput(0);
 
             for (int i = 1; i <= iteretionsCount; i++) 
             {
                 Thread.Sleep(500);
                 ocean.Iterate();
-                Console.Clear();
-                ocean.FilledArrayOutput();
-                Console.WriteLine("Iteretion: " + i);
-                if (!ocean.CellsCountOutput())
+                oceanDisplay.ClearPrint();
+                oceanDisplay.PrintOcean();
+                
+                if (!oceanDisplay.CellsCountOutput(i))
                 {
-                    Console.WriteLine("**********"+"\nGame Over!"+ "\n**********");
+                    oceanDisplay.NotifyGameOver();
                     break;
                 }
                     

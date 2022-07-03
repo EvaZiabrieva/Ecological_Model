@@ -11,7 +11,7 @@ namespace EcologicalModel
         private int reproduceCounter;
         private readonly int maxTimeToReproduce = 6;
 
-        public Prey(Random random) : base(random)
+        public Prey(Random random, Ocean ocean) : base(random, ocean)
         {
             reproduceCounter = maxTimeToReproduce;
         }
@@ -21,7 +21,7 @@ namespace EcologicalModel
             return 'f';
         }
 
-        public override void Iterate(Cell[,] cells, int i, int j)
+        public override void Iterate(int i, int j)
         {
             int direction = random.Next(0, 4);
             int offsetHorizontalMovement = 0;
@@ -49,23 +49,23 @@ namespace EcologicalModel
                     break;
             }
 
-            if (IsMoveAccordingToLimit(cells, i, j, offsetHorizontalMovement, offsetVerticalMovement))
+            if (IsMoveAccordingToLimit( i, j, offsetHorizontalMovement, offsetVerticalMovement))
             {
-                bool isEmptyNeghbour = cells[i + offsetHorizontalMovement, j + offsetVerticalMovement] == null;
-                bool canEat = !isEmptyNeghbour && CanEat(cells[i + offsetHorizontalMovement, j + offsetVerticalMovement]);
+                bool isEmptyNeghbour = ocean.GetCell(i + offsetHorizontalMovement, j + offsetVerticalMovement) == null;
+                bool canEat = !isEmptyNeghbour && CanEat(ocean.GetCell(i + offsetHorizontalMovement, j + offsetVerticalMovement));
 
                 if (isEmptyNeghbour || canEat)
                 {
-                    cells[i + offsetHorizontalMovement, j + offsetVerticalMovement] = cells[i, j];
+                    ocean.SetCell(i + offsetHorizontalMovement, j + offsetVerticalMovement, ocean.GetCell(i, j));
                     if(reproduceCounter > 0)
                     {
-                        cells[i, j] = null;
+                        ocean.SetCell(i, j, null);
                         reproduceCounter--;
                     }
                     else 
                     {
                         reproduceCounter = maxTimeToReproduce;
-                        cells[i, j] = CreteChild();
+                        ocean.SetCell(i, j, CreteChild());
                     }
                 }
                 if (canEat)
@@ -75,13 +75,13 @@ namespace EcologicalModel
 
         protected virtual Cell CreteChild()
         {
-            return new Prey(random);
+            return new Prey(random, ocean);
         }
 
-        public bool IsMoveAccordingToLimit(Cell[,] cells, int i, int j, int offsetI, int offsetJ)
+        public bool IsMoveAccordingToLimit(int i, int j, int offsetI, int offsetJ)
         {
-            return (j + offsetJ < cells.GetLength(1) && j + offsetJ >= 0
-                && i + offsetI < cells.GetLength(0) && i + offsetI >= 0);
+            return (j + offsetJ < ocean.GetHeight() && j + offsetJ >= 0
+                && i + offsetI < ocean.GetWidth() && i + offsetI >= 0);
         }
 
         protected virtual bool CanEat(Cell cell)

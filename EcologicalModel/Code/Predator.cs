@@ -11,7 +11,7 @@ namespace EcologicalModel
         private int lifeTimeCounter;
         private readonly int maxLifeIteretionCount = 6;
 
-        public Predator(Random random) : base(random)
+        public Predator(Random random, Ocean ocean) : base(random, ocean)
         {
             lifeTimeCounter = maxLifeIteretionCount;
         }
@@ -21,12 +21,12 @@ namespace EcologicalModel
             return 'S';
         }
 
-        public override void Iterate(Cell[,] cells, int i, int j)
+        public override void Iterate(int i, int j)
         {
             if (lifeTimeCounter > 0)
-                base.Iterate(cells, i, j);
+                base.Iterate(i, j);
             else
-                cells[i, j] = null;
+                ocean.SetCell(i, j, null);
             lifeTimeCounter--;
         }
 
@@ -42,7 +42,7 @@ namespace EcologicalModel
 
         protected override Cell CreteChild()
         {
-            return new Predator(random);
+            return new Predator(random, ocean);
         }
     }
 }
