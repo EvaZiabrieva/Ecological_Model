@@ -8,12 +8,10 @@ namespace EcologicalModel
 {
     public abstract class Cell
     {
-        protected readonly Random random;
         protected readonly Ocean ocean;
 
-        public Cell(Random random, Ocean ocean)
+        public Cell(Ocean ocean)
         {
-            this.random = random;
             this.ocean = ocean;
         }
 

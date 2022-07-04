@@ -6,14 +6,23 @@ using System.Threading.Tasks;
 
 namespace EcologicalModel
 {
-    public class Ocean
+    public class Ocean : IOceanView
     {
         private Cell[,] cells;
-        Random random = new Random();
+        private OceanRandom random;
+
+        public OceanRandom Random
+        {
+            get
+            { 
+                return random;
+            }
+        }
 
         public void Initilize(int maxRows, int maxCols)
         {
             cells = new Cell[maxRows, maxCols];
+            random = new OceanRandom(this);
         }
 
         public void ArrayFill(int predatorsCount, int preysCount, int obstacleCount)
@@ -25,47 +34,23 @@ namespace EcologicalModel
 
             for (int n = 0; n < predatorsCount; n++)
             {
-                int i;
-                int j;
+                random.GetEmptyCellPosition(out int i, out int j);
 
-                do
-                {
-                    i = random.Next(0, cells.GetLength(0));
-                    j = random.Next(0, cells.GetLength(1));
-                }
-                while (cells[i, j] != null);
-
-                cells[i, j] = new Predator(random, this);
+                cells[i, j] = new Predator(this);
             }
 
             for (int n = 0; n < preysCount; n++)
             {
-                int i;
-                int j;
+                random.GetEmptyCellPosition(out int i, out int j);
 
-                do
-                {
-                    i = random.Next(0, cells.GetLength(0));
-                    j = random.Next(0, cells.GetLength(1));
-                }
-                while (cells[i, j] != null);
-
-                cells[i, j] = new Prey(random, this);
+                cells[i, j] = new Prey(this);
             }
 
             for (int n = 0; n < obstacleCount; n++)
             {
-                int i;
-                int j;
+                random.GetEmptyCellPosition(out int i, out int j);
 
-                do
-                {
-                    i = random.Next(0, cells.GetLength(0));
-                    j = random.Next(0, cells.GetLength(1));
-                }
-                while (cells[i, j] != null);
-
-                cells[i, j] = new Obstacle(random, this);
+                cells[i, j] = new Obstacle(this);
             }
         }
 
@@ -87,6 +72,7 @@ namespace EcologicalModel
             }
         }
 
+
         public int GetWidth()
         {
             return cells.GetLength(0);
@@ -96,14 +82,16 @@ namespace EcologicalModel
             return cells.GetLength(1);
         }
 
-        public Cell GetCell(int i, int j)
+        public Cell this[int i, int j]
         {
-            return cells[i, j];
-        }
-
-        public void SetCell(int i, int j, Cell cell)
-        {
-            cells[i, j] = cell;
+            get
+            {
+                return cells[i, j];
+            }
+            set
+            {
+                cells[i, j] = value;
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ namespace EcologicalModel
 {
     class Obstacle: Cell
     {
-        public Obstacle(Random random, Ocean ocean) : base(random, ocean)
+        public Obstacle(Ocean ocean) : base(ocean)
         {
         }
 

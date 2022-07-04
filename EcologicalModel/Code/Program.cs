@@ -12,7 +12,7 @@ namespace EcologicalModel
         static void Main(string[] args)
         {
             Ocean ocean = new Ocean();
-            IOceanDisplay oceanDisplay = new ConsoleOceanDisplay(ocean);
+            IOceanViewer oceanDisplay = new ConsoleOceanViewer(ocean);
 
             int width = 25;
             int height = 70;
@@ -42,8 +42,7 @@ namespace EcologicalModel
                 {
                     oceanDisplay.NotifyGameOver();
                     break;
-                }
-                    
+                }   
             }
 
             Console.ReadKey();

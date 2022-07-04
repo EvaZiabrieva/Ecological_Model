@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace EcologicalModel
 {
-    class Coordinate
+    public interface IOceanView
     {
+         int GetWidth();
+         int GetHeight();
+         Cell this[int i, int j] { get; }
     }
 }

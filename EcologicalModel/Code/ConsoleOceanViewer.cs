@@ -6,23 +6,25 @@ using System.Threading.Tasks;
 
 namespace EcologicalModel
 {
-    class ConsoleOceanDisplay : IOceanDisplay
+    class ConsoleOceanViewer : IOceanViewer
     {
-        private readonly Ocean ocean;
-        public ConsoleOceanDisplay(Ocean ocean)
+        private readonly IOceanView oceanView;
+
+        public ConsoleOceanViewer(IOceanView oceanView)
         {
-            this.ocean = ocean;
+            this.oceanView = oceanView;
         }
+
         public void PrintOcean()
         {
-            for (int i = 0; i < ocean.GetWidth(); i++)
+            for (int i = 0; i < oceanView.GetWidth(); i++)
             {
                string line = "";
        
-               for (int j = 0; j < ocean.GetHeight(); j++)
+               for (int j = 0; j < oceanView.GetHeight(); j++)
                {
-                   if (ocean.GetCell(i, j) != null)
-                       line += ocean.GetCell(i, j).GetSymbol();
+                   if (oceanView[i, j] != null)
+                       line += oceanView[i, j].GetSymbol();
                    else
                        line += "-";
                }
@@ -30,6 +32,7 @@ namespace EcologicalModel
                Console.WriteLine(line);
             }
         }
+
         public void ClearPrint()
         {
             Console.Clear();
@@ -70,19 +73,19 @@ namespace EcologicalModel
             int preysCount = 0;
             int obsecleCount = 0;
 
-            for (int i = 0; i < ocean.GetWidth(); i++)
+            for (int i = 0; i < oceanView.GetWidth(); i++)
             {
-                for (int j = 0; j < ocean.GetHeight(); j++)
+                for (int j = 0; j < oceanView.GetHeight(); j++)
                 {
-                    if (ocean.GetCell(i, j) is Predator)
+                    if (oceanView[i, j] is Predator)
                     {
                         predatorsCount++;
                     }
-                    else if (ocean.GetCell(i, j) is Prey)
+                    else if (oceanView[i, j] is Prey)
                     {
                         preysCount++;
                     }
-                    else if (ocean.GetCell(i, j) is Obstacle)
+                    else if (oceanView[i, j] is Obstacle)
                     {
                         obsecleCount++;
                     }

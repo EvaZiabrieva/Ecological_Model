@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EcologicalModel
 {
-    interface IOceanDisplay
+    interface IOceanViewer
     {
         void PrintOcean();
         void ClearPrint();

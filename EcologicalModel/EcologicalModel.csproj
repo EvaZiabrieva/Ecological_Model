@@ -44,14 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\Cell.cs" />
-    <Compile Include="Code\Coordinate.cs" />
+    <Compile Include="Code\IOceanView.cs" />
     <Compile Include="Code\Obstacle.cs" />
     <Compile Include="Code\Ocean.cs" />
     <Compile Include="Code\Predator.cs" />
     <Compile Include="Code\Prey.cs" />
     <Compile Include="Code\Program.cs" />
-    <Compile Include="ConsoleOceanDisplay.cs" />
-    <Compile Include="IOceanDisplay.cs" />
+    <Compile Include="Code\ConsoleOceanViewer.cs" />
+    <Compile Include="Code\IOceanViewer.cs" />
+    <Compile Include="Code\OceanRandom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
