@@ -23,7 +23,7 @@ namespace EcologicalModel
                 i = random.Next(0, oceanView.GetWidth());
                 j = random.Next(0, oceanView.GetHeight());
             }
-            while (oceanView[i, j] != null);
+            while (oceanView.GetCellView(i, j) != '-');
         }
 
         public void GetOffset(out int offsetHorizontalMovement, out int offsetVerticalMovement)

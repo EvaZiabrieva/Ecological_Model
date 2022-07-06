@@ -18,7 +18,7 @@ namespace EcologicalModel
 
         public override char GetSymbol()
         {
-            return 'f';
+            return OceanViewConst.PreySymbol;
         }
 
         public override void Iterate(int i, int j)
@@ -28,11 +28,12 @@ namespace EcologicalModel
             if (IsMoveAccordingToLimit( i, j, offsetHorizontalMovement, offsetVerticalMovement))
             {
                 bool isEmptyNeghbour = ocean[i + offsetHorizontalMovement, j + offsetVerticalMovement] == null;
-                bool canEat = !isEmptyNeghbour && IsCanEat(ocean[i + offsetHorizontalMovement, j + offsetVerticalMovement]);
+                bool IscanEat = !isEmptyNeghbour && IsCanEat(ocean[i + offsetHorizontalMovement, j + offsetVerticalMovement]);
 
-                if (isEmptyNeghbour || canEat)
+                if (isEmptyNeghbour || IscanEat)
                 {
                     ocean[i + offsetHorizontalMovement, j + offsetVerticalMovement] = ocean[i, j];
+
                     if(reproduceCounter > 0)
                     {
                         ocean[i, j] = null;
@@ -44,7 +45,7 @@ namespace EcologicalModel
                         ocean[i, j] = CreteChild();
                     }
                 }
-                if (canEat)
+                if (IscanEat)
                     Eat();
             }
         }
@@ -54,7 +55,7 @@ namespace EcologicalModel
             return new Prey(ocean);
         }
 
-        public bool IsMoveAccordingToLimit(int i, int j, int offsetI, int offsetJ)
+        private bool IsMoveAccordingToLimit(int i, int j, int offsetI, int offsetJ)
         {
             return (j + offsetJ < ocean.GetHeight() && j + offsetJ >= 0
                 && i + offsetI < ocean.GetWidth() && i + offsetI >= 0);

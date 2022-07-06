@@ -14,7 +14,7 @@ namespace EcologicalModel
 
         public override char GetSymbol()
         {
-            return '#';
+            return OceanViewConst.ObstacleSymbol;
         }
 
         public override void Iterate(int i, int j)

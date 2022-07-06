@@ -24,8 +24,6 @@ namespace EcologicalModel
             oceanDisplay.InputOceanParameters(ref width, ref height, ref predatorCount, ref preyCount, ref obstacleCount,
                     ref iteretionsCount);
 
-            oceanDisplay.ClearPrint();
-
             ocean.Initilize(width, height);
             ocean.ArrayFill(predatorCount, preyCount, obstacleCount);
             oceanDisplay.PrintOcean();
@@ -33,9 +31,8 @@ namespace EcologicalModel
 
             for (int i = 1; i <= iteretionsCount; i++) 
             {
-                Thread.Sleep(500);
+                //Thread.Sleep(500);
                 ocean.Iterate();
-                oceanDisplay.ClearPrint();
                 oceanDisplay.PrintOcean();
                 
                 if (!oceanDisplay.CellsCountOutput(i))

@@ -10,6 +10,6 @@ namespace EcologicalModel
     {
          int GetWidth();
          int GetHeight();
-         Cell this[int i, int j] { get; }
+         char GetCellView(int i, int j);
     }
 }

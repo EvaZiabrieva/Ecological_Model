@@ -63,6 +63,7 @@ namespace EcologicalModel
                 for (int j = 0; j < cells.GetLength(1); j++)
                 {
                     Cell cell = cells[i, j];
+
                     if (cell != null && !iteratedCells.Contains(cell))
                     {
                         cell.Iterate(i, j);
@@ -72,11 +73,11 @@ namespace EcologicalModel
             }
         }
 
-
         public int GetWidth()
         {
             return cells.GetLength(0);
         }
+
         public int GetHeight()
         {
             return cells.GetLength(1);
@@ -88,10 +89,21 @@ namespace EcologicalModel
             {
                 return cells[i, j];
             }
+
             set
             {
                 cells[i, j] = value;
             }
+        }
+
+        public char GetCellView(int i, int j)
+        {
+            if(this[i, j] == null)
+            {
+                return OceanViewConst.EmptyCellSymbol;
+            }
+
+            return this[i, j].GetSymbol();
         }
     }
 }

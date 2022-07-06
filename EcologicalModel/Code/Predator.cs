@@ -18,7 +18,7 @@ namespace EcologicalModel
 
         public override char GetSymbol()
         {
-            return 'S';
+            return OceanViewConst.PredatorSymbol;
         }
 
         public override void Iterate(int i, int j)
@@ -28,7 +28,9 @@ namespace EcologicalModel
                 base.Iterate(i, j);
             }
             else
+            {
                 ocean[i, j] = null;
+            }
 
             lifeTimeCounter--;
         }

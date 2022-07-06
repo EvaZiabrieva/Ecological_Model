@@ -53,6 +53,7 @@
     <Compile Include="Code\ConsoleOceanViewer.cs" />
     <Compile Include="Code\IOceanViewer.cs" />
     <Compile Include="Code\OceanRandom.cs" />
+    <Compile Include="Code\OceanViewConst.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

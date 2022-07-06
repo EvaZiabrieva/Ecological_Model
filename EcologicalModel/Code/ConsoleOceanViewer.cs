@@ -19,25 +19,23 @@ namespace EcologicalModel
         {
             for (int i = 0; i < oceanView.GetWidth(); i++)
             {
-               string line = "";
-       
                for (int j = 0; j < oceanView.GetHeight(); j++)
                {
-                   if (oceanView[i, j] != null)
-                       line += oceanView[i, j].GetSymbol();
-                   else
-                       line += "-";
+                    Console.SetCursorPosition(j, i);
+                    Console.Write(oceanView.GetCellView(i, j));
                }
-       
-               Console.WriteLine(line);
+            }
+
+            Console.WriteLine();
+        }
+
+        public void NumExeption(out int value)
+        {
+            while (!int.TryParse(Console.ReadLine(), out value))
+            {
+                Console.WriteLine("Not a number");
             }
         }
-
-        public void ClearPrint()
-        {
-            Console.Clear();
-        }
-
         public void InputOceanParameters(ref int width, ref int height, ref int predatorCount, ref int preyCount,
            ref int obstacleCount, ref int iteretionsCount)
         {
@@ -46,63 +44,61 @@ namespace EcologicalModel
 
             if (Console.ReadKey().KeyChar.ToString().ToUpper() != "Y")
             {
-                Console.WriteLine("\nWidth: ");
-                width = Convert.ToInt32(Console.ReadLine());
-
+                Console.WriteLine();
+                Console.WriteLine("Width: ");
+                NumExeption(out width);
+                
                 Console.WriteLine("Height: ");
-                height = Convert.ToInt32(Console.ReadLine());
+                NumExeption(out height);
 
                 Console.WriteLine("Predators count: ");
-                predatorCount = Convert.ToInt32(Console.ReadLine());
+                NumExeption(out predatorCount);
 
                 Console.WriteLine("Prey count: ");
-                preyCount = Convert.ToInt32(Console.ReadLine());
+                NumExeption(out preyCount);
 
                 Console.WriteLine("Obstacle count: ");
-                obstacleCount = Convert.ToInt32(Console.ReadLine());
+                NumExeption(out obstacleCount);
 
                 Console.WriteLine("Iteretions count: ");
-                iteretionsCount = Convert.ToInt32(Console.ReadLine());
+                NumExeption(out iteretionsCount);
             }
-
+            Console.Clear();
         }
 
         public bool CellsCountOutput(int iteretionIndex)
         {
             int predatorsCount = 0;
             int preysCount = 0;
-            int obsecleCount = 0;
 
             for (int i = 0; i < oceanView.GetWidth(); i++)
             {
                 for (int j = 0; j < oceanView.GetHeight(); j++)
                 {
-                    if (oceanView[i, j] is Predator)
+                    if (oceanView.GetCellView(i, j) == OceanViewConst.PredatorSymbol)
                     {
                         predatorsCount++;
                     }
-                    else if (oceanView[i, j] is Prey)
+                    else if (oceanView.GetCellView(i, j) == OceanViewConst.PreySymbol)
                     {
                         preysCount++;
-                    }
-                    else if (oceanView[i, j] is Obstacle)
-                    {
-                        obsecleCount++;
                     }
                 }
             }
 
-            Console.WriteLine("Predators: " + predatorsCount);
-            Console.WriteLine("Prey: " + preysCount);
-            Console.WriteLine("Obstacle: " + obsecleCount);
-            Console.WriteLine("Iteretion: " + iteretionIndex);
+            Console.WriteLine("Predators: " + predatorsCount + "      ");
+            Console.WriteLine("Prey: " + preysCount + "      ");
+            Console.WriteLine("Iteretion: " + iteretionIndex + "      ");
 
             return preysCount > 0 && predatorsCount > 0;
         }
 
         public void NotifyGameOver()
         {
-            Console.WriteLine("**********" + "\nGame Over!" + "\n**********");
+            Console.WriteLine(
+                "**********\n" + 
+                "Game Over!\n" + 
+                "**********");
         }
     }
 }
