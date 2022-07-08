@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace EcologicalModel
+namespace OceanLogic
 {
     public class Ocean : IOceanView
     {
@@ -14,7 +10,7 @@ namespace EcologicalModel
         public OceanRandom Random
         {
             get
-            { 
+            {
                 return random;
             }
         }
@@ -98,7 +94,7 @@ namespace EcologicalModel
 
         public char GetCellView(int i, int j)
         {
-            if(this[i, j] == null)
+            if (this[i, j] == null)
             {
                 return OceanViewConst.EmptyCellSymbol;
             }

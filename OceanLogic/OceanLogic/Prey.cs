@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EcologicalModel
+﻿namespace OceanLogic
 {
     class Prey : Cell
     {
@@ -25,7 +19,7 @@ namespace EcologicalModel
         {
             ocean.Random.GetOffset(out int offsetHorizontalMovement, out int offsetVerticalMovement);
 
-            if (IsMoveAccordingToLimit( i, j, offsetHorizontalMovement, offsetVerticalMovement))
+            if (IsMoveAccordingToLimit(i, j, offsetHorizontalMovement, offsetVerticalMovement))
             {
                 bool isEmptyNeghbour = ocean[i + offsetHorizontalMovement, j + offsetVerticalMovement] == null;
                 bool IscanEat = !isEmptyNeghbour && IsCanEat(ocean[i + offsetHorizontalMovement, j + offsetVerticalMovement]);
@@ -34,12 +28,12 @@ namespace EcologicalModel
                 {
                     ocean[i + offsetHorizontalMovement, j + offsetVerticalMovement] = ocean[i, j];
 
-                    if(reproduceCounter > 0)
+                    if (reproduceCounter > 0)
                     {
                         ocean[i, j] = null;
                         reproduceCounter--;
                     }
-                    else 
+                    else
                     {
                         reproduceCounter = maxTimeToReproduce;
                         ocean[i, j] = CreteChild();

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+using OceanLogic;
 
 namespace EcologicalModel
 {
@@ -29,17 +25,17 @@ namespace EcologicalModel
             oceanDisplay.PrintOcean();
             oceanDisplay.CellsCountOutput(0);
 
-            for (int i = 1; i <= iteretionsCount; i++) 
+            for (int i = 1; i <= iteretionsCount; i++)
             {
                 //Thread.Sleep(500);
                 ocean.Iterate();
                 oceanDisplay.PrintOcean();
-                
+
                 if (!oceanDisplay.CellsCountOutput(i))
                 {
                     oceanDisplay.NotifyGameOver();
                     break;
-                }   
+                }
             }
 
             Console.ReadKey();
