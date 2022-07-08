@@ -11,5 +11,6 @@
 
         public abstract char GetSymbol();
         public abstract void Iterate(int i, int j);
+
     }
 }
