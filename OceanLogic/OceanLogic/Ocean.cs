@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace OceanLogic
 {
@@ -17,15 +18,24 @@ namespace OceanLogic
 
         public void Initilize(int maxRows, int maxCols)
         {
+            if (maxRows <= 0 || maxCols <= 0)
+                throw new GameFieldOutSizeExeption();
             cells = new Cell[maxRows, maxCols];
-            random = new OceanRandom(this);
+                random = new OceanRandom(this);
         }
 
         public void ArrayFill(int predatorsCount, int preysCount, int obstacleCount)
         {
+            if (predatorsCount < 0)
+                throw new InvalidPredatorArgumentException();
+            if (preysCount < 0)
+                throw new InvalidPreyArgumentException();
+            if (obstacleCount < 0)
+                throw new InvalidObstacleArgumentException();
+
             if (predatorsCount + preysCount + obstacleCount > cells.GetLength(0) * cells.GetLength(1))
             {
-                return;
+                throw new ArrayFillOutFieldSizeExeption();
             }
 
             for (int n = 0; n < predatorsCount; n++)
@@ -88,12 +98,16 @@ namespace OceanLogic
 
             set
             {
+                if (i <= 0 || j <= 0 || i > GetWidth() || j > GetHeight()) 
+                    throw new IndexOutOfRangeException();
                 cells[i, j] = value;
             }
         }
 
         public char GetCellView(int i, int j)
         {
+            if (i <= 0 || j <= 0 || i > GetWidth() || j > GetHeight())
+                throw new IndexOutOfRangeException();
             if (this[i, j] == null)
             {
                 return OceanViewConst.EmptyCellSymbol;
