@@ -98,7 +98,7 @@ namespace OceanLogic
 
             set
             {
-                if (i <= 0 || j <= 0 || i > GetWidth() || j > GetHeight()) 
+                if (i < 0 || j < 0 || i > GetWidth() - 1 || j > GetHeight() - 1) 
                     throw new IndexOutOfRangeException();
                 cells[i, j] = value;
             }
@@ -106,7 +106,7 @@ namespace OceanLogic
 
         public char GetCellView(int i, int j)
         {
-            if (i <= 0 || j <= 0 || i > GetWidth() || j > GetHeight())
+            if (i < 0 || j < 0 || i > GetWidth() - 1 || j > GetHeight() - 1)
                 throw new IndexOutOfRangeException();
             if (this[i, j] == null)
             {
