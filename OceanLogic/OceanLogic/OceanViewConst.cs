@@ -2,9 +2,9 @@
 {
     public class OceanViewConst
     {
-        public const char PreySymbol = 'f';
-        public const char PredatorSymbol = 'S';
-        public const char ObstacleSymbol = '#';
-        public const char EmptyCellSymbol = '-';
+        public const char _preySymbol = 'f';
+        public const char _predatorSymbol = 'S';
+        public const char _obstacleSymbol = '#';
+        public const char _emptyCellSymbol = '-';
     }
 }

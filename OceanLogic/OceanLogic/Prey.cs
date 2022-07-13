@@ -2,41 +2,41 @@
 {
     class Prey : Cell
     {
-        private int reproduceCounter;
-        private readonly int maxTimeToReproduce = 6;
+        private int _reproduceCounter;
+        private readonly int _maxTimeToReproduce = 6;
 
         public Prey(Ocean ocean) : base(ocean)
         {
-            reproduceCounter = maxTimeToReproduce;
+            _reproduceCounter = _maxTimeToReproduce;
         }
 
         public override char GetSymbol()
         {
-            return OceanViewConst.PreySymbol;
+            return OceanViewConst._preySymbol;
         }
 
         public override void Iterate(int i, int j)
         {
-            ocean.Random.GetOffset(out int offsetHorizontalMovement, out int offsetVerticalMovement);
+            _ocean.Random.GetOffset(out int offsetHorizontalMovement, out int offsetVerticalMovement);
 
             if (IsMoveAccordingToLimit(i, j, offsetHorizontalMovement, offsetVerticalMovement))
             {
-                bool isEmptyNeghbour = ocean[i + offsetHorizontalMovement, j + offsetVerticalMovement] == null;
-                bool IscanEat = !isEmptyNeghbour && IsCanEat(ocean[i + offsetHorizontalMovement, j + offsetVerticalMovement]);
+                bool isEmptyNeghbour = _ocean[i + offsetHorizontalMovement, j + offsetVerticalMovement] == null;
+                bool IscanEat = !isEmptyNeghbour && IsCanEat(_ocean[i + offsetHorizontalMovement, j + offsetVerticalMovement]);
 
                 if (isEmptyNeghbour || IscanEat)
                 {
-                    ocean[i + offsetHorizontalMovement, j + offsetVerticalMovement] = ocean[i, j];
+                    _ocean[i + offsetHorizontalMovement, j + offsetVerticalMovement] = _ocean[i, j];
 
-                    if (reproduceCounter > 0)
+                    if (_reproduceCounter > 0)
                     {
-                        ocean[i, j] = null;
-                        reproduceCounter--;
+                        _ocean[i, j] = null;
+                        _reproduceCounter--;
                     }
                     else
                     {
-                        reproduceCounter = maxTimeToReproduce;
-                        ocean[i, j] = CreteChild();
+                        _reproduceCounter = _maxTimeToReproduce;
+                        _ocean[i, j] = CreteChild();
                     }
                 }
                 if (IscanEat)
@@ -46,13 +46,13 @@
 
         protected virtual Cell CreteChild()
         {
-            return new Prey(ocean);
+            return new Prey(_ocean);
         }
 
         private bool IsMoveAccordingToLimit(int i, int j, int offsetI, int offsetJ)
         {
-            return (j + offsetJ < ocean.GetHeight() && j + offsetJ >= 0
-                && i + offsetI < ocean.GetWidth() && i + offsetI >= 0);
+            return (j + offsetJ < _ocean.GetHeight() && j + offsetJ >= 0
+                && i + offsetI < _ocean.GetWidth() && i + offsetI >= 0);
         }
 
 

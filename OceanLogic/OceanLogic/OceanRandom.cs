@@ -4,27 +4,27 @@ namespace OceanLogic
 {
     public class OceanRandom
     {
-        private readonly Random random = new Random();
-        private readonly IOceanView oceanView;
+        private readonly Random _random = new Random();
+        private readonly IOceanView _oceanView;
 
         public OceanRandom(IOceanView oceanView)
         {
-            this.oceanView = oceanView;
+            this._oceanView = oceanView;
         }
 
         public void GetEmptyCellPosition(out int i, out int j)
         {
             do
             {
-                i = random.Next(0, oceanView.GetWidth());
-                j = random.Next(0, oceanView.GetHeight());
+                i = _random.Next(0, _oceanView.GetWidth());
+                j = _random.Next(0, _oceanView.GetHeight());
             }
-            while (oceanView.GetCellView(i, j) != '-');
+            while (_oceanView.GetCellView(i, j) != '-');
         }
 
         public void GetOffset(out int offsetHorizontalMovement, out int offsetVerticalMovement)
         {
-            int direction = random.Next(0, 4);
+            int direction = _random.Next(0, 4);
 
             switch (direction)
             {

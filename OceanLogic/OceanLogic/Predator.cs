@@ -2,31 +2,31 @@
 {
     class Predator : Prey
     {
-        private int lifeTimeCounter;
-        private readonly int maxLifeIteretionCount = 6;
+        private int _lifeTimeCounter;
+        private readonly int _maxLifeIteretionCount = 6;
 
         public Predator(Ocean ocean) : base(ocean)
         {
-            lifeTimeCounter = maxLifeIteretionCount;
+            _lifeTimeCounter = _maxLifeIteretionCount;
         }
 
         public override char GetSymbol()
         {
-            return OceanViewConst.PredatorSymbol;
+            return OceanViewConst._predatorSymbol;
         }
 
         public override void Iterate(int i, int j)
         {
-            if (lifeTimeCounter > 0)
+            if (_lifeTimeCounter > 0)
             {
                 base.Iterate(i, j);
             }
             else
             {
-                ocean[i, j] = null;
+                _ocean[i, j] = null;
             }
 
-            lifeTimeCounter--;
+            _lifeTimeCounter--;
         }
 
         protected override bool IsCanEat(Cell cell)
@@ -36,12 +36,12 @@
 
         protected override void Eat()
         {
-            lifeTimeCounter = maxLifeIteretionCount;
+            _lifeTimeCounter = _maxLifeIteretionCount;
         }
 
         protected override Cell CreteChild()
         {
-            return new Predator(ocean);
+            return new Predator(_ocean);
         }
     }
 }

@@ -17,11 +17,23 @@ namespace EcologicalModel
             int obstacleCount = 75;
             int iteretionsCount = 1000;
 
-            oceanDisplay.InputOceanParameters(ref width, ref height, ref predatorCount, ref preyCount, ref obstacleCount,
+            while (true)
+            {
+                try
+                {
+                    oceanDisplay.InputOceanParameters(ref width, ref height, ref predatorCount, ref preyCount, ref obstacleCount,
                     ref iteretionsCount);
 
-            ocean.Initilize(width, height);
-            ocean.ArrayFill(predatorCount, preyCount, obstacleCount);
+                    ocean.Initilize(width, height);
+                    ocean.ArrayFill(predatorCount, preyCount, obstacleCount);
+                    break;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error: " + e.Message + "\n");
+                }
+            }
+            
             oceanDisplay.PrintOcean();
             oceanDisplay.CellsCountOutput(0);
 

@@ -2,11 +2,11 @@
 {
     public abstract class Cell
     {
-        protected readonly Ocean ocean;
+        protected readonly Ocean _ocean;
 
         public Cell(Ocean ocean)
         {
-            this.ocean = ocean;
+            this._ocean = ocean;
         }
 
         public abstract char GetSymbol();

@@ -4,9 +4,17 @@ using System.Text;
 
 namespace OceanLogic
 {
-    public class InvalidPreyArgumentException : ArgumentException
+    public class InvalidPreyArgumentException : Exception
     {
-        public InvalidPreyArgumentException() : base("Prey count could not be negative.")
+        public InvalidPreyArgumentException()
+        {
+        }
+
+        public InvalidPreyArgumentException(string message) : base(message)
+        {
+        }
+
+        public InvalidPreyArgumentException(string message, Exception inner) : base(message, inner)
         {
         }
     }

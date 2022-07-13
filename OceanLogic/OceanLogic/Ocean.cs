@@ -5,58 +5,75 @@ namespace OceanLogic
 {
     public class Ocean : IOceanView
     {
-        private Cell[,] cells;
-        private OceanRandom random;
+        private Cell[,] _cells;
+        private readonly OceanRandom _random;
+
+        public Ocean()
+        {
+            _random = new OceanRandom(this);
+        }
 
         public OceanRandom Random
         {
             get
             {
-                return random;
+                return _random;
             }
         }
 
         public void Initilize(int maxRows, int maxCols)
         {
             if (maxRows <= 0 || maxCols <= 0)
-                throw new GameFieldOutSizeExeption();
-            cells = new Cell[maxRows, maxCols];
-                random = new OceanRandom(this);
+            {
+                throw new GameFieldOutSizeExeption("Invalid array size.");
+            }
+                
+            _cells = new Cell[maxRows, maxCols];
+            
         }
 
         public void ArrayFill(int predatorsCount, int preysCount, int obstacleCount)
         {
             if (predatorsCount < 0)
-                throw new InvalidPredatorArgumentException();
-            if (preysCount < 0)
-                throw new InvalidPreyArgumentException();
-            if (obstacleCount < 0)
-                throw new InvalidObstacleArgumentException();
-
-            if (predatorsCount + preysCount + obstacleCount > cells.GetLength(0) * cells.GetLength(1))
             {
-                throw new ArrayFillOutFieldSizeExeption();
+                throw new InvalidPredatorArgumentException("Predator count could not be negative.");
+            }
+                
+            if (preysCount < 0)
+            {
+                throw new InvalidPreyArgumentException("Prey count could not be negative.");
+            }
+                
+            if (obstacleCount < 0)
+            {
+                throw new InvalidObstacleArgumentException("Obstacle count could not be negative.");
+            }
+               
+
+            if (predatorsCount + preysCount + obstacleCount > _cells.GetLength(0) * _cells.GetLength(1))
+            {
+                throw new ArrayFillOutFieldSizeExeption("Filling in the field was greater than the field.");
             }
 
             for (int n = 0; n < predatorsCount; n++)
             {
-                random.GetEmptyCellPosition(out int i, out int j);
+                _random.GetEmptyCellPosition(out int i, out int j);
 
-                cells[i, j] = new Predator(this);
+                _cells[i, j] = new Predator(this);
             }
 
             for (int n = 0; n < preysCount; n++)
             {
-                random.GetEmptyCellPosition(out int i, out int j);
+                _random.GetEmptyCellPosition(out int i, out int j);
 
-                cells[i, j] = new Prey(this);
+                _cells[i, j] = new Prey(this);
             }
 
             for (int n = 0; n < obstacleCount; n++)
             {
-                random.GetEmptyCellPosition(out int i, out int j);
+                _random.GetEmptyCellPosition(out int i, out int j);
 
-                cells[i, j] = new Obstacle(this);
+                _cells[i, j] = new Obstacle(this);
             }
         }
 
@@ -64,11 +81,11 @@ namespace OceanLogic
         {
             HashSet<Cell> iteratedCells = new HashSet<Cell>();
 
-            for (int i = 0; i < cells.GetLength(0); i++)
+            for (int i = 0; i < _cells.GetLength(0); i++)
             {
-                for (int j = 0; j < cells.GetLength(1); j++)
+                for (int j = 0; j < _cells.GetLength(1); j++)
                 {
-                    Cell cell = cells[i, j];
+                    Cell cell = _cells[i, j];
 
                     if (cell != null && !iteratedCells.Contains(cell))
                     {
@@ -81,36 +98,47 @@ namespace OceanLogic
 
         public int GetWidth()
         {
-            return cells.GetLength(0);
+            return _cells.GetLength(0);
         }
 
         public int GetHeight()
         {
-            return cells.GetLength(1);
+            return _cells.GetLength(1);
         }
 
         public Cell this[int i, int j]
         {
             get
             {
-                return cells[i, j];
+                return _cells[i, j];
             }
 
             set
             {
-                if (i < 0 || j < 0 || i > GetWidth() - 1 || j > GetHeight() - 1) 
-                    throw new IndexOutOfRangeException();
-                cells[i, j] = value;
+                SetCell(i, j, value);
             }
+        }
+
+        private void SetCell(int i, int j, Cell value)
+        {
+            if (i < 0 || j < 0 || i > GetWidth() - 1 || j > GetHeight() - 1)
+            {
+                throw new IndexOutOfRangeException("Cell position was out of range.");
+            }
+
+            _cells[i, j] = value;
         }
 
         public char GetCellView(int i, int j)
         {
             if (i < 0 || j < 0 || i > GetWidth() - 1 || j > GetHeight() - 1)
-                throw new IndexOutOfRangeException();
+            {
+                throw new IndexOutOfRangeException("Cell position was out of range.");
+            }
+                
             if (this[i, j] == null)
             {
-                return OceanViewConst.EmptyCellSymbol;
+                return OceanViewConst._emptyCellSymbol;
             }
 
             return this[i, j].GetSymbol();

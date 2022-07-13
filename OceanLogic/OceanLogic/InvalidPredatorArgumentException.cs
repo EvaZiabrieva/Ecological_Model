@@ -4,11 +4,18 @@ using System.Text;
 
 namespace OceanLogic
 {
-    public class InvalidPredatorArgumentException : ArgumentException
+    public class InvalidPredatorArgumentException : Exception
     {
-        public InvalidPredatorArgumentException() : base("Predator count could not be negative.")
+        public InvalidPredatorArgumentException()
         {
+        }
 
+        public InvalidPredatorArgumentException(string message) : base(message)
+        {
+        }
+
+        public InvalidPredatorArgumentException(string message, Exception inner) : base(message, inner)
+        {
         }
     }
 }
