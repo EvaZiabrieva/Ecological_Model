@@ -1,30 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace WinFormsEcologicalModel
 {
-    public partial class Form1 : Form
+    class Controller : IController
     {
-        public Form1()
+        private readonly IView _view;
+        public Controller(IView view)
         {
-            InitializeComponent();
+            _view = view;
+        }
+        public void StartSimulation()
+        {
+            Thread thread1 = new Thread(OceanIteration);
+            thread1.Start();
+            _view.PrintField("abds");
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            Thread thread1 = new Thread(LabelIteration);
-            thread1.Start();
-            label1.Font = new Font(FontFamily.GenericMonospace, 10);
-        }
-        private void LabelIteration()
+        private void OceanIteration()
         {
             OceanLogic.Ocean ocean = new OceanLogic.Ocean();
 
@@ -45,19 +40,8 @@ namespace WinFormsEcologicalModel
                     oceanFill += "\n";
                 }
 
-                UpdateLabel(oceanFill);
+                _view.PrintField(oceanFill);
                 ocean.Iterate();
-            }
-        }
-        private void UpdateLabel(string text)
-        {
-            if (label1.InvokeRequired)
-            {
-                label1.BeginInvoke((MethodInvoker)delegate () { label1.Text = text; });
-            }
-            else
-            {
-                label1.Text = text;
             }
         }
     }
