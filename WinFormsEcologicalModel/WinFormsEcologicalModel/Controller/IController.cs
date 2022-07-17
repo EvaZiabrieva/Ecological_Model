@@ -4,8 +4,9 @@ using System.Text;
 
 namespace WinFormsEcologicalModel
 {
-    interface IController
+    public interface IController
     {
-        void StartSimulation();
+        string StartSimulation(int width, int height, int predatorCount, int preyCount,
+            int obstacleCount, int iteretionsCount);
     }
 }

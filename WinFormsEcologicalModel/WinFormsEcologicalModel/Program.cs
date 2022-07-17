@@ -19,7 +19,7 @@ namespace WinFormsEcologicalModel
             Application.SetCompatibleTextRenderingDefault(false);
             Form1 view = new Form1();
             IController controller = new Controller(view);
-            controller.StartSimulation();
+            view.SetController(controller);
             Application.Run(view);
         }
     }
