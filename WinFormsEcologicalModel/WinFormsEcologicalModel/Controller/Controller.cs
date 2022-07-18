@@ -36,18 +36,21 @@ namespace WinFormsEcologicalModel
 
         private void OceanIteration()
         {
+            char[,] oceanFill = new char[_ocean.GetWidth(), _ocean.GetHeight()];
+
             for (int n = 0; n < _iteretionsCount; n++)
             {
-                string oceanFill = n + "\n";
+                //string oceanFill = n + "\n";
                 Thread.Sleep(100);
 
                 for (int i = 0; i < _ocean.GetWidth(); i++)
                 {
                     for (int j = 0; j < _ocean.GetHeight(); j++)
                     {
-                        oceanFill += Convert.ToString(_ocean.GetCellView(i, j));
+                        oceanFill[i, j] = _ocean.GetCellView(i, j);
+                       // oceanFill += Convert.ToString(_ocean.GetCellView(i, j));
                     }
-                    oceanFill += "\n";
+                    //oceanFill += "\n";
                 }
 
                 _view.PrintField(oceanFill);

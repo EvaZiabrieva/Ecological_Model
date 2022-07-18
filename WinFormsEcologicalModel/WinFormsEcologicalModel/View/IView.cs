@@ -2,6 +2,6 @@
 {
     interface IView
     {
-        void PrintField(string field);
+        void PrintField(char[,] field);
     }
 }

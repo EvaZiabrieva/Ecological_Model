@@ -43,6 +43,8 @@ namespace WinFormsEcologicalModel
             this.lblIteretionsCount = new System.Windows.Forms.Label();
             this.txbIteretionsCount = new System.Windows.Forms.TextBox();
             this.btnStartSimulation = new System.Windows.Forms.Button();
+            this.dataGridViewMainField = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMainField)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMainField
@@ -174,11 +176,23 @@ namespace WinFormsEcologicalModel
             this.btnStartSimulation.UseVisualStyleBackColor = true;
             this.btnStartSimulation.Click += new System.EventHandler(this.startSimulationButton_Click);
             // 
+            // dataGridViewMainField
+            // 
+            this.dataGridViewMainField.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMainField.Location = new System.Drawing.Point(72, 14);
+            this.dataGridViewMainField.Name = "dataGridViewMainField";
+            this.dataGridViewMainField.RowHeadersWidth = 51;
+            this.dataGridViewMainField.RowTemplate.Height = 29;
+            this.dataGridViewMainField.Size = new System.Drawing.Size(849, 469);
+            this.dataGridViewMainField.TabIndex = 14;
+            this.dataGridViewMainField.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 578);
+            this.Controls.Add(this.dataGridViewMainField);
             this.Controls.Add(this.btnStartSimulation);
             this.Controls.Add(this.txbIteretionsCount);
             this.Controls.Add(this.lblIteretionsCount);
@@ -196,6 +210,7 @@ namespace WinFormsEcologicalModel
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMainField)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,6 +232,7 @@ namespace WinFormsEcologicalModel
         private System.Windows.Forms.Label lblIteretionsCount;
         private System.Windows.Forms.TextBox txbIteretionsCount;
         private System.Windows.Forms.Button btnStartSimulation;
+        private System.Windows.Forms.DataGridView dataGridViewMainField;
     }
 }
 
