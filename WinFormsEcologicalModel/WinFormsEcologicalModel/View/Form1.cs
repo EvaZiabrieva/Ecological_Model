@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinFormsEcologicalModel
@@ -21,29 +14,29 @@ namespace WinFormsEcologicalModel
 
         public void PrintField(string field)
         {
-            if (label1.InvokeRequired)
+            if (lblMainField.InvokeRequired)
             {
-                label1.BeginInvoke((MethodInvoker)delegate () { label1.Text = field; });
+                lblMainField.BeginInvoke((MethodInvoker)delegate () { lblMainField.Text = field; });
             }
             else
             {
-                label1.Text = field;
+                lblMainField.Text = field;
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            label1.Font = new Font(FontFamily.GenericMonospace, 10);
+            lblMainField.Font = new Font(FontFamily.GenericMonospace, 10);
         }
 
         private void startSimulationButton_Click(object sender, EventArgs e)
         {
-            int width = Convert.ToInt32(widthTextBox.Text);
-            int height = Convert.ToInt32(heightTextBox.Text);
-            int predatorCount = Convert.ToInt32(predatorCountTextBox.Text);
-            int preyCount = Convert.ToInt32(preyCountTextBox.Text);
-            int obstacleCount = Convert.ToInt32(obstacleCountTextBox.Text);
-            int iteretionsCount = Convert.ToInt32(iteretionsCountTextBox.Text);
+            int width = Convert.ToInt32(txbWidth.Text);
+            int height = Convert.ToInt32(txbHeight.Text);
+            int predatorCount = Convert.ToInt32(txbPredatorCount.Text);
+            int preyCount = Convert.ToInt32(txbPreyCount.Text);
+            int obstacleCount = Convert.ToInt32(txbObstacleCount.Text);
+            int iteretionsCount = Convert.ToInt32(txbIteretionsCount.Text);
 
             string error = _controller.StartSimulation(width, height, predatorCount, preyCount,
              obstacleCount, iteretionsCount);
@@ -54,26 +47,27 @@ namespace WinFormsEcologicalModel
             }
             else
             {
-                label1.Visible = true;
-                widthLabel.Visible = false;
-                widthTextBox.Visible = false;
+                lblMainField.Visible = true;
 
-                heightLabel.Visible = false;
-                heightTextBox.Visible = false;
+                lblWidth.Visible = false;
+                txbWidth.Visible = false;
 
-                predatorCountLabel.Visible = false;
-                predatorCountTextBox.Visible = false;
+                lblHeight.Visible = false;
+                txbHeight.Visible = false;
 
-                preyCountLabel.Visible = false;
-                preyCountTextBox.Visible = false;
+                lblPredatorCount.Visible = false;
+                txbPredatorCount.Visible = false;
 
-                obstacleCountLabel.Visible = false;
-                obstacleCountTextBox.Visible = false;
+                lblPreyCount.Visible = false;
+                txbPreyCount.Visible = false;
 
-                iteretionsCountLabel.Visible = false;
-                iteretionsCountTextBox.Visible = false;
+                lblObstacleCount.Visible = false;
+                txbObstacleCount.Visible = false;
 
-                startSimulationButton.Visible = false;
+                lblIteretionsCount.Visible = false;
+                txbIteretionsCount.Visible = false;
+
+                btnStartSimulation.Visible = false;
             }
         }
 

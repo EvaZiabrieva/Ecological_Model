@@ -29,170 +29,170 @@ namespace WinFormsEcologicalModel
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.widthTextBox = new System.Windows.Forms.TextBox();
-            this.widthLabel = new System.Windows.Forms.Label();
-            this.heightLabel = new System.Windows.Forms.Label();
-            this.heightTextBox = new System.Windows.Forms.TextBox();
-            this.predatorCountLabel = new System.Windows.Forms.Label();
-            this.predatorCountTextBox = new System.Windows.Forms.TextBox();
-            this.preyCountLabel = new System.Windows.Forms.Label();
-            this.preyCountTextBox = new System.Windows.Forms.TextBox();
-            this.obstacleCountLabel = new System.Windows.Forms.Label();
-            this.obstacleCountTextBox = new System.Windows.Forms.TextBox();
-            this.iteretionsCountLabel = new System.Windows.Forms.Label();
-            this.iteretionsCountTextBox = new System.Windows.Forms.TextBox();
-            this.startSimulationButton = new System.Windows.Forms.Button();
+            this.lblMainField = new System.Windows.Forms.Label();
+            this.txbWidth = new System.Windows.Forms.TextBox();
+            this.lblWidth = new System.Windows.Forms.Label();
+            this.lblHeight = new System.Windows.Forms.Label();
+            this.txbHeight = new System.Windows.Forms.TextBox();
+            this.lblPredatorCount = new System.Windows.Forms.Label();
+            this.txbPredatorCount = new System.Windows.Forms.TextBox();
+            this.lblPreyCount = new System.Windows.Forms.Label();
+            this.txbPreyCount = new System.Windows.Forms.TextBox();
+            this.lblObstacleCount = new System.Windows.Forms.Label();
+            this.txbObstacleCount = new System.Windows.Forms.TextBox();
+            this.lblIteretionsCount = new System.Windows.Forms.Label();
+            this.txbIteretionsCount = new System.Windows.Forms.TextBox();
+            this.btnStartSimulation = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lblMainField
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(137, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            this.label1.Visible = false;
+            this.lblMainField.AutoSize = true;
+            this.lblMainField.Location = new System.Drawing.Point(137, 21);
+            this.lblMainField.Name = "lblMainField";
+            this.lblMainField.Size = new System.Drawing.Size(50, 20);
+            this.lblMainField.TabIndex = 0;
+            this.lblMainField.Text = "label1";
+            this.lblMainField.Visible = false;
             // 
-            // widthTextBox
+            // txbWidth
             // 
-            this.widthTextBox.Location = new System.Drawing.Point(185, 93);
-            this.widthTextBox.Name = "widthTextBox";
-            this.widthTextBox.Size = new System.Drawing.Size(125, 27);
-            this.widthTextBox.TabIndex = 1;
-            this.widthTextBox.Text = "25";
+            this.txbWidth.Location = new System.Drawing.Point(185, 93);
+            this.txbWidth.Name = "txbWidth";
+            this.txbWidth.Size = new System.Drawing.Size(125, 27);
+            this.txbWidth.TabIndex = 1;
+            this.txbWidth.Text = "25";
             // 
-            // widthLabel
+            // lblWidth
             // 
-            this.widthLabel.AutoSize = true;
-            this.widthLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.widthLabel.Location = new System.Drawing.Point(185, 66);
-            this.widthLabel.Name = "widthLabel";
-            this.widthLabel.Size = new System.Drawing.Size(60, 23);
-            this.widthLabel.TabIndex = 2;
-            this.widthLabel.Text = "Width:";
+            this.lblWidth.AutoSize = true;
+            this.lblWidth.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblWidth.Location = new System.Drawing.Point(185, 66);
+            this.lblWidth.Name = "lblWidth";
+            this.lblWidth.Size = new System.Drawing.Size(60, 23);
+            this.lblWidth.TabIndex = 2;
+            this.lblWidth.Text = "Width:";
             // 
-            // heightLabel
+            // lblHeight
             // 
-            this.heightLabel.AutoSize = true;
-            this.heightLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.heightLabel.Location = new System.Drawing.Point(185, 182);
-            this.heightLabel.Name = "heightLabel";
-            this.heightLabel.Size = new System.Drawing.Size(65, 23);
-            this.heightLabel.TabIndex = 3;
-            this.heightLabel.Text = "Height:";
+            this.lblHeight.AutoSize = true;
+            this.lblHeight.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblHeight.Location = new System.Drawing.Point(185, 182);
+            this.lblHeight.Name = "lblHeight";
+            this.lblHeight.Size = new System.Drawing.Size(65, 23);
+            this.lblHeight.TabIndex = 3;
+            this.lblHeight.Text = "Height:";
             // 
-            // heightTextBox
+            // txbHeight
             // 
-            this.heightTextBox.Location = new System.Drawing.Point(185, 208);
-            this.heightTextBox.Name = "heightTextBox";
-            this.heightTextBox.Size = new System.Drawing.Size(125, 27);
-            this.heightTextBox.TabIndex = 4;
-            this.heightTextBox.Text = "70";
+            this.txbHeight.Location = new System.Drawing.Point(185, 208);
+            this.txbHeight.Name = "txbHeight";
+            this.txbHeight.Size = new System.Drawing.Size(125, 27);
+            this.txbHeight.TabIndex = 4;
+            this.txbHeight.Text = "70";
             // 
-            // predatorCountLabel
+            // lblPredatorCount
             // 
-            this.predatorCountLabel.AutoSize = true;
-            this.predatorCountLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.predatorCountLabel.Location = new System.Drawing.Point(625, 182);
-            this.predatorCountLabel.Name = "predatorCountLabel";
-            this.predatorCountLabel.Size = new System.Drawing.Size(129, 23);
-            this.predatorCountLabel.TabIndex = 5;
-            this.predatorCountLabel.Text = "Predator count:";
+            this.lblPredatorCount.AutoSize = true;
+            this.lblPredatorCount.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPredatorCount.Location = new System.Drawing.Point(625, 182);
+            this.lblPredatorCount.Name = "lblPredatorCount";
+            this.lblPredatorCount.Size = new System.Drawing.Size(129, 23);
+            this.lblPredatorCount.TabIndex = 5;
+            this.lblPredatorCount.Text = "Predator count:";
             // 
-            // predatorCountTextBox
+            // txbPredatorCount
             // 
-            this.predatorCountTextBox.Location = new System.Drawing.Point(630, 208);
-            this.predatorCountTextBox.Name = "predatorCountTextBox";
-            this.predatorCountTextBox.Size = new System.Drawing.Size(124, 27);
-            this.predatorCountTextBox.TabIndex = 6;
-            this.predatorCountTextBox.Text = "20";
+            this.txbPredatorCount.Location = new System.Drawing.Point(630, 208);
+            this.txbPredatorCount.Name = "txbPredatorCount";
+            this.txbPredatorCount.Size = new System.Drawing.Size(124, 27);
+            this.txbPredatorCount.TabIndex = 6;
+            this.txbPredatorCount.Text = "20";
             // 
-            // preyCountLabel
+            // lblPreyCount
             // 
-            this.preyCountLabel.AutoSize = true;
-            this.preyCountLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.preyCountLabel.Location = new System.Drawing.Point(630, 66);
-            this.preyCountLabel.Name = "preyCountLabel";
-            this.preyCountLabel.Size = new System.Drawing.Size(96, 23);
-            this.preyCountLabel.TabIndex = 7;
-            this.preyCountLabel.Text = "Prey count:";
+            this.lblPreyCount.AutoSize = true;
+            this.lblPreyCount.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPreyCount.Location = new System.Drawing.Point(630, 66);
+            this.lblPreyCount.Name = "lblPreyCount";
+            this.lblPreyCount.Size = new System.Drawing.Size(96, 23);
+            this.lblPreyCount.TabIndex = 7;
+            this.lblPreyCount.Text = "Prey count:";
             // 
-            // preyCountTextBox
+            // txbPreyCount
             // 
-            this.preyCountTextBox.Location = new System.Drawing.Point(629, 92);
-            this.preyCountTextBox.Name = "preyCountTextBox";
-            this.preyCountTextBox.Size = new System.Drawing.Size(125, 27);
-            this.preyCountTextBox.TabIndex = 8;
-            this.preyCountTextBox.Text = "150";
+            this.txbPreyCount.Location = new System.Drawing.Point(629, 92);
+            this.txbPreyCount.Name = "txbPreyCount";
+            this.txbPreyCount.Size = new System.Drawing.Size(125, 27);
+            this.txbPreyCount.TabIndex = 8;
+            this.txbPreyCount.Text = "150";
             // 
-            // obstacleCountLabel
+            // lblObstacleCount
             // 
-            this.obstacleCountLabel.AutoSize = true;
-            this.obstacleCountLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.obstacleCountLabel.Location = new System.Drawing.Point(630, 303);
-            this.obstacleCountLabel.Name = "obstacleCountLabel";
-            this.obstacleCountLabel.Size = new System.Drawing.Size(129, 23);
-            this.obstacleCountLabel.TabIndex = 9;
-            this.obstacleCountLabel.Text = "Obstacle count:";
+            this.lblObstacleCount.AutoSize = true;
+            this.lblObstacleCount.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblObstacleCount.Location = new System.Drawing.Point(630, 303);
+            this.lblObstacleCount.Name = "lblObstacleCount";
+            this.lblObstacleCount.Size = new System.Drawing.Size(129, 23);
+            this.lblObstacleCount.TabIndex = 9;
+            this.lblObstacleCount.Text = "Obstacle count:";
             // 
-            // obstacleCountTextBox
+            // txbObstacleCount
             // 
-            this.obstacleCountTextBox.Location = new System.Drawing.Point(631, 329);
-            this.obstacleCountTextBox.Name = "obstacleCountTextBox";
-            this.obstacleCountTextBox.Size = new System.Drawing.Size(128, 27);
-            this.obstacleCountTextBox.TabIndex = 10;
-            this.obstacleCountTextBox.Text = "75";
+            this.txbObstacleCount.Location = new System.Drawing.Point(631, 329);
+            this.txbObstacleCount.Name = "txbObstacleCount";
+            this.txbObstacleCount.Size = new System.Drawing.Size(128, 27);
+            this.txbObstacleCount.TabIndex = 10;
+            this.txbObstacleCount.Text = "75";
             // 
-            // iteretionsCountLabel
+            // lblIteretionsCount
             // 
-            this.iteretionsCountLabel.AutoSize = true;
-            this.iteretionsCountLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iteretionsCountLabel.Location = new System.Drawing.Point(185, 303);
-            this.iteretionsCountLabel.Name = "iteretionsCountLabel";
-            this.iteretionsCountLabel.Size = new System.Drawing.Size(131, 23);
-            this.iteretionsCountLabel.TabIndex = 11;
-            this.iteretionsCountLabel.Text = "Iteretions count";
+            this.lblIteretionsCount.AutoSize = true;
+            this.lblIteretionsCount.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblIteretionsCount.Location = new System.Drawing.Point(185, 303);
+            this.lblIteretionsCount.Name = "lblIteretionsCount";
+            this.lblIteretionsCount.Size = new System.Drawing.Size(131, 23);
+            this.lblIteretionsCount.TabIndex = 11;
+            this.lblIteretionsCount.Text = "Iteretions count";
             // 
-            // iteretionsCountTextBox
+            // txbIteretionsCount
             // 
-            this.iteretionsCountTextBox.Location = new System.Drawing.Point(185, 329);
-            this.iteretionsCountTextBox.Name = "iteretionsCountTextBox";
-            this.iteretionsCountTextBox.Size = new System.Drawing.Size(125, 27);
-            this.iteretionsCountTextBox.TabIndex = 12;
-            this.iteretionsCountTextBox.Text = "1000";
+            this.txbIteretionsCount.Location = new System.Drawing.Point(185, 329);
+            this.txbIteretionsCount.Name = "txbIteretionsCount";
+            this.txbIteretionsCount.Size = new System.Drawing.Size(125, 27);
+            this.txbIteretionsCount.TabIndex = 12;
+            this.txbIteretionsCount.Text = "1000";
             // 
-            // startSimulationButton
+            // btnStartSimulation
             // 
-            this.startSimulationButton.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.startSimulationButton.Location = new System.Drawing.Point(291, 418);
-            this.startSimulationButton.Name = "startSimulationButton";
-            this.startSimulationButton.Size = new System.Drawing.Size(395, 83);
-            this.startSimulationButton.TabIndex = 13;
-            this.startSimulationButton.Text = "Start simulation";
-            this.startSimulationButton.UseVisualStyleBackColor = true;
-            this.startSimulationButton.Click += new System.EventHandler(this.startSimulationButton_Click);
+            this.btnStartSimulation.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnStartSimulation.Location = new System.Drawing.Point(291, 418);
+            this.btnStartSimulation.Name = "btnStartSimulation";
+            this.btnStartSimulation.Size = new System.Drawing.Size(395, 83);
+            this.btnStartSimulation.TabIndex = 13;
+            this.btnStartSimulation.Text = "Start simulation";
+            this.btnStartSimulation.UseVisualStyleBackColor = true;
+            this.btnStartSimulation.Click += new System.EventHandler(this.startSimulationButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 578);
-            this.Controls.Add(this.startSimulationButton);
-            this.Controls.Add(this.iteretionsCountTextBox);
-            this.Controls.Add(this.iteretionsCountLabel);
-            this.Controls.Add(this.obstacleCountTextBox);
-            this.Controls.Add(this.obstacleCountLabel);
-            this.Controls.Add(this.preyCountTextBox);
-            this.Controls.Add(this.preyCountLabel);
-            this.Controls.Add(this.predatorCountTextBox);
-            this.Controls.Add(this.predatorCountLabel);
-            this.Controls.Add(this.heightTextBox);
-            this.Controls.Add(this.heightLabel);
-            this.Controls.Add(this.widthLabel);
-            this.Controls.Add(this.widthTextBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnStartSimulation);
+            this.Controls.Add(this.txbIteretionsCount);
+            this.Controls.Add(this.lblIteretionsCount);
+            this.Controls.Add(this.txbObstacleCount);
+            this.Controls.Add(this.lblObstacleCount);
+            this.Controls.Add(this.txbPreyCount);
+            this.Controls.Add(this.lblPreyCount);
+            this.Controls.Add(this.txbPredatorCount);
+            this.Controls.Add(this.lblPredatorCount);
+            this.Controls.Add(this.txbHeight);
+            this.Controls.Add(this.lblHeight);
+            this.Controls.Add(this.lblWidth);
+            this.Controls.Add(this.txbWidth);
+            this.Controls.Add(this.lblMainField);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -203,20 +203,20 @@ namespace WinFormsEcologicalModel
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox widthTextBox;
-        private System.Windows.Forms.Label widthLabel;
-        private System.Windows.Forms.Label heightLabel;
-        private System.Windows.Forms.TextBox heightTextBox;
-        private System.Windows.Forms.Label predatorCountLabel;
-        private System.Windows.Forms.TextBox predatorCountTextBox;
-        private System.Windows.Forms.Label preyCountLabel;
-        private System.Windows.Forms.TextBox preyCountTextBox;
-        private System.Windows.Forms.Label obstacleCountLabel;
-        private System.Windows.Forms.TextBox obstacleCountTextBox;
-        private System.Windows.Forms.Label iteretionsCountLabel;
-        private System.Windows.Forms.TextBox iteretionsCountTextBox;
-        private System.Windows.Forms.Button startSimulationButton;
+        private System.Windows.Forms.Label lblMainField;
+        private System.Windows.Forms.TextBox txbWidth;
+        private System.Windows.Forms.Label lblWidth;
+        private System.Windows.Forms.Label lblHeight;
+        private System.Windows.Forms.TextBox txbHeight;
+        private System.Windows.Forms.Label lblPredatorCount;
+        private System.Windows.Forms.TextBox txbPredatorCount;
+        private System.Windows.Forms.Label lblPreyCount;
+        private System.Windows.Forms.TextBox txbPreyCount;
+        private System.Windows.Forms.Label lblObstacleCount;
+        private System.Windows.Forms.TextBox txbObstacleCount;
+        private System.Windows.Forms.Label lblIteretionsCount;
+        private System.Windows.Forms.TextBox txbIteretionsCount;
+        private System.Windows.Forms.Button btnStartSimulation;
     }
 }
 
