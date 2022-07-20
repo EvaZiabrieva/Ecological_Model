@@ -29,7 +29,6 @@ namespace WinFormsEcologicalModel
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblMainField = new System.Windows.Forms.Label();
             this.txbWidth = new System.Windows.Forms.TextBox();
             this.lblWidth = new System.Windows.Forms.Label();
             this.lblHeight = new System.Windows.Forms.Label();
@@ -44,18 +43,9 @@ namespace WinFormsEcologicalModel
             this.txbIteretionsCount = new System.Windows.Forms.TextBox();
             this.btnStartSimulation = new System.Windows.Forms.Button();
             this.dataGridViewMainField = new System.Windows.Forms.DataGridView();
+            this.lblStatistic = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMainField)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblMainField
-            // 
-            this.lblMainField.AutoSize = true;
-            this.lblMainField.Location = new System.Drawing.Point(137, 21);
-            this.lblMainField.Name = "lblMainField";
-            this.lblMainField.Size = new System.Drawing.Size(50, 20);
-            this.lblMainField.TabIndex = 0;
-            this.lblMainField.Text = "label1";
-            this.lblMainField.Visible = false;
             // 
             // txbWidth
             // 
@@ -178,20 +168,38 @@ namespace WinFormsEcologicalModel
             // 
             // dataGridViewMainField
             // 
+            this.dataGridViewMainField.AllowUserToAddRows = false;
+            this.dataGridViewMainField.AllowUserToDeleteRows = false;
+            this.dataGridViewMainField.AllowUserToResizeColumns = false;
+            this.dataGridViewMainField.AllowUserToResizeRows = false;
+            this.dataGridViewMainField.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewMainField.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMainField.Location = new System.Drawing.Point(72, 14);
+            this.dataGridViewMainField.Location = new System.Drawing.Point(12, 135);
             this.dataGridViewMainField.Name = "dataGridViewMainField";
             this.dataGridViewMainField.RowHeadersWidth = 51;
             this.dataGridViewMainField.RowTemplate.Height = 29;
-            this.dataGridViewMainField.Size = new System.Drawing.Size(849, 469);
+            this.dataGridViewMainField.Size = new System.Drawing.Size(1212, 535);
             this.dataGridViewMainField.TabIndex = 14;
             this.dataGridViewMainField.Visible = false;
+            // 
+            // lblStatistic
+            // 
+            this.lblStatistic.AutoSize = true;
+            this.lblStatistic.Location = new System.Drawing.Point(79, 18);
+            this.lblStatistic.Name = "lblStatistic";
+            this.lblStatistic.Size = new System.Drawing.Size(50, 20);
+            this.lblStatistic.TabIndex = 15;
+            this.lblStatistic.Text = "label1";
+            this.lblStatistic.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 578);
+            this.ClientSize = new System.Drawing.Size(1236, 682);
+            this.Controls.Add(this.lblStatistic);
             this.Controls.Add(this.dataGridViewMainField);
             this.Controls.Add(this.btnStartSimulation);
             this.Controls.Add(this.txbIteretionsCount);
@@ -206,7 +214,6 @@ namespace WinFormsEcologicalModel
             this.Controls.Add(this.lblHeight);
             this.Controls.Add(this.lblWidth);
             this.Controls.Add(this.txbWidth);
-            this.Controls.Add(this.lblMainField);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -217,8 +224,6 @@ namespace WinFormsEcologicalModel
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblMainField;
         private System.Windows.Forms.TextBox txbWidth;
         private System.Windows.Forms.Label lblWidth;
         private System.Windows.Forms.Label lblHeight;
@@ -233,6 +238,7 @@ namespace WinFormsEcologicalModel
         private System.Windows.Forms.TextBox txbIteretionsCount;
         private System.Windows.Forms.Button btnStartSimulation;
         private System.Windows.Forms.DataGridView dataGridViewMainField;
+        private System.Windows.Forms.Label lblStatistic;
     }
 }
 
