@@ -174,6 +174,9 @@ namespace WinFormsEcologicalModel
                 lblStatistic.Visible = true;
                 dataGridViewMainField.Visible = true;
 
+                btnChangeMaxColor.Visible = true;
+                btnChangeMinColor.Visible = true;
+
                 lblWidth.Visible = false;
                 txbWidth.Visible = false;
 
@@ -191,6 +194,9 @@ namespace WinFormsEcologicalModel
 
                 lblIteretionsCount.Visible = false;
                 txbIteretionsCount.Visible = false;
+
+                lblStaticSuperPredator.Visible = false;
+                txbStaticSuperPredator.Visible = false;
 
                 btnStartSimulation.Visible = false;
             }

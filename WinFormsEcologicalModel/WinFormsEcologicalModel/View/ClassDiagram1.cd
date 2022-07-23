@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="WinFormsEcologicalModel.Controller">
-    <Position X="7.5" Y="2.75" Width="1.5" />
+    <Position X="10.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAAAAAAEAAQAAAAEAAAAIAAAACAEAAAAAAA=</HashCode>
       <FileName>Controller\Controller.cs</FileName>
@@ -13,21 +13,24 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WinFormsEcologicalModel.Program">
-    <Position X="2.75" Y="2.25" Width="1.5" />
+    <Position X="8" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OceanLogic.Ocean">
-    <Position X="10.25" Y="0.5" Width="1.5" />
+    <Position X="13.25" Y="0.5" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WinFormsEcologicalModel.Form1">
     <Position X="5.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>CAAkUgIKEDEAABWAAgCAARQjEgQQIBCAACQEEEAwAEU=</HashCode>
+      <HashCode>CAAkUgIKEDEAABWAAgCAARQjMgQQIBCAACQEEEAwAEU=</HashCode>
       <FileName>View\MainFieldView.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -36,14 +39,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="WinFormsEcologicalModel.IController">
-    <Position X="2.75" Y="0.5" Width="1.5" />
+    <Position X="8" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
       <FileName>Controller\IController.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="WinFormsEcologicalModel.IView">
-    <Position X="7.5" Y="0.5" Width="1.5" />
+    <Position X="10.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIBAAAAAAAAAAAAA=</HashCode>
       <FileName>View\IView.cs</FileName>

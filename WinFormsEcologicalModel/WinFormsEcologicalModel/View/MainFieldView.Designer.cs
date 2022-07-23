@@ -47,126 +47,154 @@ namespace WinFormsEcologicalModel
             this.txbStaticSuperPredator = new System.Windows.Forms.TextBox();
             this.btnChangeMinColor = new System.Windows.Forms.Button();
             this.btnChangeMaxColor = new System.Windows.Forms.Button();
+            this.lblStaticSuperPredator = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMainField)).BeginInit();
             this.SuspendLayout();
             // 
             // txbWidth
             // 
-            this.txbWidth.Location = new System.Drawing.Point(185, 93);
+            this.txbWidth.BackColor = System.Drawing.Color.White;
+            this.txbWidth.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbWidth.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.txbWidth.Location = new System.Drawing.Point(144, 123);
             this.txbWidth.Name = "txbWidth";
-            this.txbWidth.Size = new System.Drawing.Size(125, 27);
+            this.txbWidth.Size = new System.Drawing.Size(125, 29);
             this.txbWidth.TabIndex = 1;
             this.txbWidth.Text = "25";
             // 
             // lblWidth
             // 
             this.lblWidth.AutoSize = true;
-            this.lblWidth.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblWidth.Location = new System.Drawing.Point(185, 66);
+            this.lblWidth.BackColor = System.Drawing.Color.Transparent;
+            this.lblWidth.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblWidth.ForeColor = System.Drawing.Color.White;
+            this.lblWidth.Location = new System.Drawing.Point(144, 90);
             this.lblWidth.Name = "lblWidth";
-            this.lblWidth.Size = new System.Drawing.Size(60, 23);
+            this.lblWidth.Size = new System.Drawing.Size(108, 29);
             this.lblWidth.TabIndex = 2;
             this.lblWidth.Text = "Width:";
             // 
             // lblHeight
             // 
             this.lblHeight.AutoSize = true;
-            this.lblHeight.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHeight.Location = new System.Drawing.Point(185, 182);
+            this.lblHeight.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeight.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblHeight.ForeColor = System.Drawing.Color.White;
+            this.lblHeight.Location = new System.Drawing.Point(510, 90);
             this.lblHeight.Name = "lblHeight";
-            this.lblHeight.Size = new System.Drawing.Size(65, 23);
+            this.lblHeight.Size = new System.Drawing.Size(108, 29);
             this.lblHeight.TabIndex = 3;
             this.lblHeight.Text = "Height:";
             // 
             // txbHeight
             // 
-            this.txbHeight.Location = new System.Drawing.Point(185, 208);
+            this.txbHeight.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbHeight.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.txbHeight.Location = new System.Drawing.Point(509, 122);
             this.txbHeight.Name = "txbHeight";
-            this.txbHeight.Size = new System.Drawing.Size(125, 27);
+            this.txbHeight.Size = new System.Drawing.Size(125, 29);
             this.txbHeight.TabIndex = 4;
             this.txbHeight.Text = "70";
             // 
             // lblPredatorCount
             // 
             this.lblPredatorCount.AutoSize = true;
-            this.lblPredatorCount.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPredatorCount.Location = new System.Drawing.Point(625, 182);
+            this.lblPredatorCount.BackColor = System.Drawing.Color.Transparent;
+            this.lblPredatorCount.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPredatorCount.ForeColor = System.Drawing.Color.White;
+            this.lblPredatorCount.Location = new System.Drawing.Point(470, 232);
             this.lblPredatorCount.Name = "lblPredatorCount";
-            this.lblPredatorCount.Size = new System.Drawing.Size(129, 23);
+            this.lblPredatorCount.Size = new System.Drawing.Size(223, 29);
             this.lblPredatorCount.TabIndex = 5;
             this.lblPredatorCount.Text = "Predator count:";
             // 
             // txbPredatorCount
             // 
-            this.txbPredatorCount.Location = new System.Drawing.Point(630, 208);
+            this.txbPredatorCount.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbPredatorCount.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.txbPredatorCount.Location = new System.Drawing.Point(510, 264);
             this.txbPredatorCount.Name = "txbPredatorCount";
-            this.txbPredatorCount.Size = new System.Drawing.Size(124, 27);
+            this.txbPredatorCount.Size = new System.Drawing.Size(124, 29);
             this.txbPredatorCount.TabIndex = 6;
             this.txbPredatorCount.Text = "20";
             // 
             // lblPreyCount
             // 
             this.lblPreyCount.AutoSize = true;
-            this.lblPreyCount.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPreyCount.Location = new System.Drawing.Point(630, 66);
+            this.lblPreyCount.BackColor = System.Drawing.Color.Transparent;
+            this.lblPreyCount.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPreyCount.ForeColor = System.Drawing.Color.White;
+            this.lblPreyCount.Location = new System.Drawing.Point(128, 232);
             this.lblPreyCount.Name = "lblPreyCount";
-            this.lblPreyCount.Size = new System.Drawing.Size(96, 23);
+            this.lblPreyCount.Size = new System.Drawing.Size(161, 29);
             this.lblPreyCount.TabIndex = 7;
             this.lblPreyCount.Text = "Prey count:";
             // 
             // txbPreyCount
             // 
-            this.txbPreyCount.Location = new System.Drawing.Point(629, 92);
+            this.txbPreyCount.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbPreyCount.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.txbPreyCount.Location = new System.Drawing.Point(143, 264);
             this.txbPreyCount.Name = "txbPreyCount";
-            this.txbPreyCount.Size = new System.Drawing.Size(125, 27);
+            this.txbPreyCount.Size = new System.Drawing.Size(125, 29);
             this.txbPreyCount.TabIndex = 8;
             this.txbPreyCount.Text = "150";
             // 
             // lblObstacleCount
             // 
             this.lblObstacleCount.AutoSize = true;
-            this.lblObstacleCount.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblObstacleCount.Location = new System.Drawing.Point(630, 303);
+            this.lblObstacleCount.BackColor = System.Drawing.Color.Transparent;
+            this.lblObstacleCount.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblObstacleCount.ForeColor = System.Drawing.Color.White;
+            this.lblObstacleCount.Location = new System.Drawing.Point(799, 232);
             this.lblObstacleCount.Name = "lblObstacleCount";
-            this.lblObstacleCount.Size = new System.Drawing.Size(129, 23);
+            this.lblObstacleCount.Size = new System.Drawing.Size(212, 29);
             this.lblObstacleCount.TabIndex = 9;
             this.lblObstacleCount.Text = "Obstacle count:";
             // 
             // txbObstacleCount
             // 
-            this.txbObstacleCount.Location = new System.Drawing.Point(631, 329);
+            this.txbObstacleCount.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbObstacleCount.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.txbObstacleCount.Location = new System.Drawing.Point(844, 264);
             this.txbObstacleCount.Name = "txbObstacleCount";
-            this.txbObstacleCount.Size = new System.Drawing.Size(128, 27);
+            this.txbObstacleCount.Size = new System.Drawing.Size(128, 29);
             this.txbObstacleCount.TabIndex = 10;
             this.txbObstacleCount.Text = "75";
             // 
             // lblIteretionsCount
             // 
             this.lblIteretionsCount.AutoSize = true;
-            this.lblIteretionsCount.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblIteretionsCount.Location = new System.Drawing.Point(185, 303);
+            this.lblIteretionsCount.BackColor = System.Drawing.Color.Transparent;
+            this.lblIteretionsCount.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblIteretionsCount.ForeColor = System.Drawing.Color.White;
+            this.lblIteretionsCount.Location = new System.Drawing.Point(799, 90);
             this.lblIteretionsCount.Name = "lblIteretionsCount";
-            this.lblIteretionsCount.Size = new System.Drawing.Size(131, 23);
+            this.lblIteretionsCount.Size = new System.Drawing.Size(222, 29);
             this.lblIteretionsCount.TabIndex = 11;
             this.lblIteretionsCount.Text = "Iteretions count";
             // 
             // txbIteretionsCount
             // 
-            this.txbIteretionsCount.Location = new System.Drawing.Point(185, 329);
+            this.txbIteretionsCount.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbIteretionsCount.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.txbIteretionsCount.Location = new System.Drawing.Point(841, 122);
             this.txbIteretionsCount.Name = "txbIteretionsCount";
-            this.txbIteretionsCount.Size = new System.Drawing.Size(125, 27);
+            this.txbIteretionsCount.Size = new System.Drawing.Size(125, 29);
             this.txbIteretionsCount.TabIndex = 12;
             this.txbIteretionsCount.Text = "1000";
             // 
             // btnStartSimulation
             // 
-            this.btnStartSimulation.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnStartSimulation.Location = new System.Drawing.Point(291, 418);
+            this.btnStartSimulation.BackColor = System.Drawing.Color.White;
+            this.btnStartSimulation.Font = new System.Drawing.Font("Showcard Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnStartSimulation.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnStartSimulation.Location = new System.Drawing.Point(329, 473);
             this.btnStartSimulation.Name = "btnStartSimulation";
-            this.btnStartSimulation.Size = new System.Drawing.Size(395, 83);
+            this.btnStartSimulation.Size = new System.Drawing.Size(488, 112);
             this.btnStartSimulation.TabIndex = 13;
             this.btnStartSimulation.Text = "Start simulation";
-            this.btnStartSimulation.UseVisualStyleBackColor = true;
+            this.btnStartSimulation.UseVisualStyleBackColor = false;
             this.btnStartSimulation.Click += new System.EventHandler(this.startSimulationButton_Click);
             // 
             // dataGridViewMainField
@@ -179,57 +207,84 @@ namespace WinFormsEcologicalModel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewMainField.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMainField.Location = new System.Drawing.Point(12, 135);
+            this.dataGridViewMainField.Location = new System.Drawing.Point(2, 122);
             this.dataGridViewMainField.Name = "dataGridViewMainField";
             this.dataGridViewMainField.RowHeadersWidth = 51;
             this.dataGridViewMainField.RowTemplate.Height = 29;
-            this.dataGridViewMainField.Size = new System.Drawing.Size(1212, 535);
+            this.dataGridViewMainField.Size = new System.Drawing.Size(1131, 520);
             this.dataGridViewMainField.TabIndex = 14;
             this.dataGridViewMainField.Visible = false;
             // 
             // lblStatistic
             // 
             this.lblStatistic.AutoSize = true;
+            this.lblStatistic.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatistic.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblStatistic.ForeColor = System.Drawing.Color.White;
             this.lblStatistic.Location = new System.Drawing.Point(79, 18);
             this.lblStatistic.Name = "lblStatistic";
-            this.lblStatistic.Size = new System.Drawing.Size(50, 20);
+            this.lblStatistic.Size = new System.Drawing.Size(65, 21);
             this.lblStatistic.TabIndex = 15;
             this.lblStatistic.Text = "label1";
             this.lblStatistic.Visible = false;
             // 
             // txbStaticSuperPredator
             // 
-            this.txbStaticSuperPredator.Location = new System.Drawing.Point(939, 92);
+            this.txbStaticSuperPredator.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbStaticSuperPredator.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.txbStaticSuperPredator.Location = new System.Drawing.Point(510, 401);
             this.txbStaticSuperPredator.Name = "txbStaticSuperPredator";
-            this.txbStaticSuperPredator.Size = new System.Drawing.Size(134, 27);
+            this.txbStaticSuperPredator.Size = new System.Drawing.Size(124, 29);
             this.txbStaticSuperPredator.TabIndex = 16;
             this.txbStaticSuperPredator.Text = "10";
             // 
             // btnChangeMinColor
             // 
+            this.btnChangeMinColor.BackColor = System.Drawing.Color.White;
+            this.btnChangeMinColor.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnChangeMinColor.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.btnChangeMinColor.Location = new System.Drawing.Point(631, 18);
             this.btnChangeMinColor.Name = "btnChangeMinColor";
             this.btnChangeMinColor.Size = new System.Drawing.Size(139, 29);
             this.btnChangeMinColor.TabIndex = 17;
             this.btnChangeMinColor.Text = "Min Color";
-            this.btnChangeMinColor.UseVisualStyleBackColor = true;
+            this.btnChangeMinColor.UseVisualStyleBackColor = false;
+            this.btnChangeMinColor.Visible = false;
             this.btnChangeMinColor.Click += new System.EventHandler(this.btnChangeMinColor_Click);
             // 
             // btnChangeMaxColor
             // 
+            this.btnChangeMaxColor.BackColor = System.Drawing.Color.White;
+            this.btnChangeMaxColor.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnChangeMaxColor.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.btnChangeMaxColor.Location = new System.Drawing.Point(789, 18);
             this.btnChangeMaxColor.Name = "btnChangeMaxColor";
             this.btnChangeMaxColor.Size = new System.Drawing.Size(139, 29);
             this.btnChangeMaxColor.TabIndex = 18;
             this.btnChangeMaxColor.Text = "Max Color";
-            this.btnChangeMaxColor.UseVisualStyleBackColor = true;
+            this.btnChangeMaxColor.UseVisualStyleBackColor = false;
+            this.btnChangeMaxColor.Visible = false;
             this.btnChangeMaxColor.Click += new System.EventHandler(this.btnChangeMaxColor_Click);
+            // 
+            // lblStaticSuperPredator
+            // 
+            this.lblStaticSuperPredator.AutoSize = true;
+            this.lblStaticSuperPredator.BackColor = System.Drawing.Color.Transparent;
+            this.lblStaticSuperPredator.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblStaticSuperPredator.ForeColor = System.Drawing.Color.White;
+            this.lblStaticSuperPredator.Location = new System.Drawing.Point(421, 369);
+            this.lblStaticSuperPredator.Name = "lblStaticSuperPredator";
+            this.lblStaticSuperPredator.Size = new System.Drawing.Size(293, 29);
+            this.lblStaticSuperPredator.TabIndex = 19;
+            this.lblStaticSuperPredator.Text = "Static super predator";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 682);
+            this.BackgroundImage = global::WinFormsEcologicalModel.Properties.Resources.photo_2022_07_23_15_58_39;
+            this.ClientSize = new System.Drawing.Size(1136, 644);
+            this.Controls.Add(this.lblStaticSuperPredator);
             this.Controls.Add(this.btnChangeMaxColor);
             this.Controls.Add(this.btnChangeMinColor);
             this.Controls.Add(this.txbStaticSuperPredator);
@@ -276,6 +331,7 @@ namespace WinFormsEcologicalModel
         private System.Windows.Forms.TextBox txbStaticSuperPredator;
         private System.Windows.Forms.Button btnChangeMinColor;
         private System.Windows.Forms.Button btnChangeMaxColor;
+        private System.Windows.Forms.Label lblStaticSuperPredator;
     }
 }
 
