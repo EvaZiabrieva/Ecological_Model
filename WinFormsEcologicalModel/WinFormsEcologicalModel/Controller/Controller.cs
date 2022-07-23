@@ -16,13 +16,23 @@ namespace WinFormsEcologicalModel
             _view = view;
         }
 
+        /// <summary>
+        /// Test test test
+        /// </summary>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="predatorCount"></param>
+        /// <param name="preyCount"></param>
+        /// <param name="obstacleCount"></param>
+        /// <param name="iteretionsCount"></param>
+        /// <returns></returns>
         public string StartSimulation(int width, int height, int predatorCount, int preyCount,
-            int obstacleCount, int iteretionsCount)
+            int obstacleCount, int iteretionsCount, int staticSuperPredator)
         {
             try
             {
                 _ocean.Initilize(width, height);
-                _ocean.ArrayFill(predatorCount, preyCount, obstacleCount);
+                _ocean.ArrayFill(predatorCount, preyCount, obstacleCount, staticSuperPredator);
                 _iteretionsCount = iteretionsCount;
 
                 Thread thread1 = new Thread(OceanIteration);
@@ -42,7 +52,7 @@ namespace WinFormsEcologicalModel
 
         private void OceanIteration()
         {
-            char[,] oceanFill = new char[_ocean.GetWidth(), _ocean.GetHeight()];
+            CellData[,] oceanFill = new CellData[_ocean.GetWidth(), _ocean.GetHeight()];
             
             for (int n = 0; n < _iteretionsCount; n++)
             {
@@ -57,7 +67,7 @@ namespace WinFormsEcologicalModel
                 {
                     for (int j = 0; j < _ocean.GetHeight(); j++)
                     {
-                        oceanFill[i, j] = _ocean.GetCellView(i, j);
+                        oceanFill[i, j] = new CellData(_ocean[i, j] == null ? 0 : _ocean[i, j].GetHashCode(), _ocean.GetCellView(i, j));
                     }
                 }
 

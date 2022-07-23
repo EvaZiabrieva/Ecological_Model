@@ -8,7 +8,7 @@
 
         public override char GetSymbol()
         {
-            return OceanViewConst._obstacleSymbol;
+            return OceanViewConst.ObstacleSymbol;
         }
 
         public override void Iterate(int i, int j)

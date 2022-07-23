@@ -2,7 +2,7 @@
 {
     interface IView
     {
-        void PrintField(char[,] field);
+        void PrintField(CellData[,] field);
         void NotifySimulationEnd();
     }
 }

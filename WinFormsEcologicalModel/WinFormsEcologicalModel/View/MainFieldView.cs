@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
+using OceanLogic;
 
 namespace WinFormsEcologicalModel
 {
@@ -14,16 +15,20 @@ namespace WinFormsEcologicalModel
         private Bitmap _predatorImage = new Bitmap(new Bitmap("Images/predator.png"), CELL_SIZE, CELL_SIZE);
         private Bitmap _obsticleImage = new Bitmap(new Bitmap("Images/obsticle.png"), CELL_SIZE, CELL_SIZE);
         private Bitmap _emptyImage = new Bitmap(new Bitmap("Images/empty.png"), CELL_SIZE, CELL_SIZE);
+        private Bitmap _staticSuperPredatorImage = new Bitmap(new Bitmap("Images/staticSuperPredator.png"), CELL_SIZE, CELL_SIZE);
         private int _preyCount;
         private int _predatorCount;
         private int _iterationCount;
+
+        private Color _minColor = Color.FromArgb(0, 0, 128);
+        private Color _maxColor = Color.FromArgb(128, 128, 255);
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        public void PrintField(char[,] field)
+        public void PrintField(CellData[,] field)
         {
             if (dataGridViewMainField.InvokeRequired)
             {
@@ -35,7 +40,7 @@ namespace WinFormsEcologicalModel
             }
         }
 
-        private void CellsFill(char[,] field)
+        private void CellsFill(CellData[,] field)
         {
             _iterationCount++;
             _predatorCount = 0;
@@ -43,7 +48,7 @@ namespace WinFormsEcologicalModel
 
             if (!_isFieldInitilized)
             {
-                FieldInit(field);
+                FieldInit(field.GetLength(0), field.GetLength(1));
                 _isFieldInitilized = true;
             }
 
@@ -51,7 +56,8 @@ namespace WinFormsEcologicalModel
             {
                 for (int j = 0; j < dataGridViewMainField.ColumnCount; j++)
                 {
-                    dataGridViewMainField[j, i].Value = GetCellView(field[i, j]);
+                    dataGridViewMainField[j, i].Value = GetCellView(field[i, j].Symbol);
+                    dataGridViewMainField[j, i].Style.BackColor = GetColor(field[i, j].Hash);
                 }
             }
 
@@ -72,16 +78,15 @@ namespace WinFormsEcologicalModel
             MessageBox.Show("Simulation is over!");
         }
 
-        private void FieldInit(char[,] field)
+        private void FieldInit(int rowCount, int columnCount)
         {
-            dataGridViewMainField.RowCount = field.GetLength(0);
-
+            dataGridViewMainField.RowCount = rowCount;
             dataGridViewMainField.RowHeadersVisible = false;
             dataGridViewMainField.ColumnHeadersVisible = false;
+
             EnableDoubleBuffer();
 
-
-            for (int i = 0; i < field.GetLength(1); i++)
+            for (int i = 0; i < columnCount; i++)
             {
                 DataGridViewImageColumn imageCol = new DataGridViewImageColumn();
                 imageCol.Width = CELL_SIZE;
@@ -92,7 +97,7 @@ namespace WinFormsEcologicalModel
                     dataGridViewMainField.Columns.RemoveAt(0);
                 }
 
-                for (int j = 0; j < field.GetLength(0); j++)
+                for (int j = 0; j < rowCount; j++)
                 {
                     dataGridViewMainField.Rows[j].Height = CELL_SIZE;
                 }
@@ -103,17 +108,33 @@ namespace WinFormsEcologicalModel
         {
             switch (c)
             {
-                case 'S':
+                case OceanViewConst.PredatorSymbol:
                     _predatorCount++;
                     return _predatorImage;
-                case 'f':
+                case OceanViewConst.PreySymbol:
                     _preyCount++;
                     return _preyImage;
-                case '#':
+                case OceanViewConst.ObstacleSymbol:
                     return _obsticleImage;
+                case OceanViewConst.StaticSuperPredatorSymbol:
+                    return _staticSuperPredatorImage;
                 default:
                     return _emptyImage;
             }
+        }
+
+        private Color GetColor(int hash)
+        {
+            byte[] bytes = BitConverter.GetBytes(hash);
+            return Color.FromArgb(
+                ModClamp(_minColor.R, _maxColor.R, bytes[0]),
+                ModClamp(_minColor.G, _maxColor.G, bytes[1]),
+                ModClamp(_minColor.B, _maxColor.B, bytes[2]));
+        }
+
+        private byte ModClamp(byte min, byte max, byte value)
+        {
+            return (byte)(value % (max - min + 1) + min);
         }
 
         private void EnableDoubleBuffer()
@@ -134,13 +155,15 @@ namespace WinFormsEcologicalModel
         {
             int width = Convert.ToInt32(txbWidth.Text);
             int height = Convert.ToInt32(txbHeight.Text);
+
             int predatorCount = Convert.ToInt32(txbPredatorCount.Text);
             int preyCount = Convert.ToInt32(txbPreyCount.Text);
             int obstacleCount = Convert.ToInt32(txbObstacleCount.Text);
             int iteretionsCount = Convert.ToInt32(txbIteretionsCount.Text);
+            int staticSuperPredatorCount = Convert.ToInt32(txbStaticSuperPredator.Text);
 
             string error = _controller.StartSimulation(width, height, predatorCount, preyCount,
-             obstacleCount, iteretionsCount);
+                    obstacleCount, iteretionsCount, staticSuperPredatorCount);
 
             if (error != null)
             {
@@ -176,6 +199,27 @@ namespace WinFormsEcologicalModel
         public void SetController(IController controller)
         {
             _controller = controller;
+        }
+
+        private void btnChangeMinColor_Click(object sender, EventArgs e)
+        {
+            PickColor(ref _minColor);
+        }
+
+        private void btnChangeMaxColor_Click(object sender, EventArgs e)
+        {
+            PickColor(ref _maxColor);
+        }
+
+        private void PickColor(ref Color color)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.ShowHelp = true;
+            colorDialog.FullOpen = true;
+
+            colorDialog.Color = color;
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+                color = colorDialog.Color;
         }
     }
 }

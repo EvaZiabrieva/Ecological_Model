@@ -32,7 +32,8 @@ namespace OceanLogic
             
         }
 
-        public void ArrayFill(int predatorsCount, int preysCount, int obstacleCount)
+        public void ArrayFill(int predatorsCount, int preysCount, int obstacleCount, 
+            int staticSuperPredatorCount)
         {
             if (predatorsCount < 0)
             {
@@ -48,9 +49,15 @@ namespace OceanLogic
             {
                 throw new InvalidObstacleArgumentException("Obstacle count could not be negative.");
             }
-               
 
-            if (predatorsCount + preysCount + obstacleCount > _cells.GetLength(0) * _cells.GetLength(1))
+            if (staticSuperPredatorCount < 0)
+            {
+                throw new InvalidStaticSuperPredatorArgumentException("Static super predator count could not be negative.");
+            }
+            int targetFillCellsCount = predatorsCount + preysCount + obstacleCount + staticSuperPredatorCount;
+            int availableCellsCount = _cells.GetLength(0) * _cells.GetLength(1);
+
+            if (targetFillCellsCount > availableCellsCount)
             {
                 throw new ArrayFillOutFieldSizeExeption("Filling in the field was greater than the field.");
             }
@@ -74,6 +81,13 @@ namespace OceanLogic
                 _random.GetEmptyCellPosition(out int i, out int j);
 
                 _cells[i, j] = new Obstacle(this);
+            }
+
+            for (int n = 0; n < staticSuperPredatorCount; n++)
+            {
+                _random.GetEmptyCellPosition(out int i, out int j);
+
+                _cells[i, j] = new StaticSuperPredator(this);
             }
         }
 
@@ -138,7 +152,7 @@ namespace OceanLogic
                 
             if (this[i, j] == null)
             {
-                return OceanViewConst._emptyCellSymbol;
+                return OceanViewConst.EmptyCellSymbol;
             }
 
             return this[i, j].GetSymbol();

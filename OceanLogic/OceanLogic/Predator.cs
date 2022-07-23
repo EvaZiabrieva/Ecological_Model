@@ -12,7 +12,7 @@
 
         public override char GetSymbol()
         {
-            return OceanViewConst._predatorSymbol;
+            return OceanViewConst.PredatorSymbol;
         }
 
         public override void Iterate(int i, int j)

@@ -12,7 +12,7 @@
 
         public override char GetSymbol()
         {
-            return OceanViewConst._preySymbol;
+            return OceanViewConst.PreySymbol;
         }
 
         public override void Iterate(int i, int j)
@@ -21,8 +21,9 @@
 
             if (IsMoveAccordingToLimit(i, j, offsetHorizontalMovement, offsetVerticalMovement))
             {
-                bool isEmptyNeghbour = _ocean[i + offsetHorizontalMovement, j + offsetVerticalMovement] == null;
-                bool IscanEat = !isEmptyNeghbour && IsCanEat(_ocean[i + offsetHorizontalMovement, j + offsetVerticalMovement]);
+                Cell neighbour = _ocean[i + offsetHorizontalMovement, j + offsetVerticalMovement];
+                bool isEmptyNeghbour = neighbour == null;
+                bool IscanEat = !isEmptyNeghbour && IsCanEat(neighbour);
 
                 if (isEmptyNeghbour || IscanEat)
                 {

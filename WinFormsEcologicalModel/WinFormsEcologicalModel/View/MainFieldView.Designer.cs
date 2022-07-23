@@ -44,6 +44,9 @@ namespace WinFormsEcologicalModel
             this.btnStartSimulation = new System.Windows.Forms.Button();
             this.dataGridViewMainField = new System.Windows.Forms.DataGridView();
             this.lblStatistic = new System.Windows.Forms.Label();
+            this.txbStaticSuperPredator = new System.Windows.Forms.TextBox();
+            this.btnChangeMinColor = new System.Windows.Forms.Button();
+            this.btnChangeMaxColor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMainField)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,11 +197,42 @@ namespace WinFormsEcologicalModel
             this.lblStatistic.Text = "label1";
             this.lblStatistic.Visible = false;
             // 
+            // txbStaticSuperPredator
+            // 
+            this.txbStaticSuperPredator.Location = new System.Drawing.Point(939, 92);
+            this.txbStaticSuperPredator.Name = "txbStaticSuperPredator";
+            this.txbStaticSuperPredator.Size = new System.Drawing.Size(134, 27);
+            this.txbStaticSuperPredator.TabIndex = 16;
+            this.txbStaticSuperPredator.Text = "10";
+            // 
+            // btnChangeMinColor
+            // 
+            this.btnChangeMinColor.Location = new System.Drawing.Point(631, 18);
+            this.btnChangeMinColor.Name = "btnChangeMinColor";
+            this.btnChangeMinColor.Size = new System.Drawing.Size(139, 29);
+            this.btnChangeMinColor.TabIndex = 17;
+            this.btnChangeMinColor.Text = "Min Color";
+            this.btnChangeMinColor.UseVisualStyleBackColor = true;
+            this.btnChangeMinColor.Click += new System.EventHandler(this.btnChangeMinColor_Click);
+            // 
+            // btnChangeMaxColor
+            // 
+            this.btnChangeMaxColor.Location = new System.Drawing.Point(789, 18);
+            this.btnChangeMaxColor.Name = "btnChangeMaxColor";
+            this.btnChangeMaxColor.Size = new System.Drawing.Size(139, 29);
+            this.btnChangeMaxColor.TabIndex = 18;
+            this.btnChangeMaxColor.Text = "Max Color";
+            this.btnChangeMaxColor.UseVisualStyleBackColor = true;
+            this.btnChangeMaxColor.Click += new System.EventHandler(this.btnChangeMaxColor_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1236, 682);
+            this.Controls.Add(this.btnChangeMaxColor);
+            this.Controls.Add(this.btnChangeMinColor);
+            this.Controls.Add(this.txbStaticSuperPredator);
             this.Controls.Add(this.lblStatistic);
             this.Controls.Add(this.dataGridViewMainField);
             this.Controls.Add(this.btnStartSimulation);
@@ -239,6 +273,9 @@ namespace WinFormsEcologicalModel
         private System.Windows.Forms.Button btnStartSimulation;
         private System.Windows.Forms.DataGridView dataGridViewMainField;
         private System.Windows.Forms.Label lblStatistic;
+        private System.Windows.Forms.TextBox txbStaticSuperPredator;
+        private System.Windows.Forms.Button btnChangeMinColor;
+        private System.Windows.Forms.Button btnChangeMaxColor;
     }
 }
 
