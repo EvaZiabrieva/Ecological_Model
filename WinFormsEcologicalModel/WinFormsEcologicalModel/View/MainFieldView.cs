@@ -6,7 +6,7 @@ using OceanLogic;
 
 namespace WinFormsEcologicalModel
 {
-    public partial class Form1 : Form, IView
+    public partial class MainFieldView : Form, IView
     {
         private const int CELL_SIZE = 25; 
         private IController _controller;
@@ -23,7 +23,7 @@ namespace WinFormsEcologicalModel
         private Color _minColor = Color.FromArgb(0, 0, 128);
         private Color _maxColor = Color.FromArgb(128, 128, 255);
 
-        public Form1()
+        public MainFieldView()
         {
             InitializeComponent();
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace WinFormsEcologicalModel
 {
-    partial class Form1
+    partial class MainFieldView
     {
         /// <summary>
         ///  Required designer variable.
@@ -304,7 +304,7 @@ namespace WinFormsEcologicalModel
             this.Controls.Add(this.lblWidth);
             this.Controls.Add(this.txbWidth);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Ecological model";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMainField)).EndInit();
             this.ResumeLayout(false);

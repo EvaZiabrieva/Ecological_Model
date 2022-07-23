@@ -12,7 +12,7 @@ namespace WinFormsEcologicalModel
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Form1 view = new Form1();
+            MainFieldView view = new MainFieldView();
             IController controller = new Controller(view);
             view.SetController(controller);
             Application.Run(view);
