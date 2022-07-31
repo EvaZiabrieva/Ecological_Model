@@ -8,7 +8,7 @@ namespace WinFormsEcologicalModel
 {
     public partial class MainFieldView : Form, IView
     {
-        private const int CELL_SIZE = 25; 
+        private const int CELL_SIZE = 60; 
         private IController _controller;
         private bool _isFieldInitilized;
         private Bitmap _preyImage = new Bitmap(new Bitmap("Images/prey.png"), CELL_SIZE, CELL_SIZE);
@@ -153,8 +153,8 @@ namespace WinFormsEcologicalModel
 
         private void startSimulationButton_Click(object sender, EventArgs e)
         {
-            int width = Convert.ToInt32(txbWidth.Text);
-            int height = Convert.ToInt32(txbHeight.Text);
+            int width = Convert.ToInt32(txbHeight.Text);
+            int height = Convert.ToInt32(txbWidth.Text);
 
             int predatorCount = Convert.ToInt32(txbPredatorCount.Text);
             int preyCount = Convert.ToInt32(txbPreyCount.Text);
@@ -178,10 +178,10 @@ namespace WinFormsEcologicalModel
                 btnChangeMinColor.Visible = true;
 
                 lblWidth.Visible = false;
-                txbWidth.Visible = false;
+                txbHeight.Visible = false;
 
                 lblHeight.Visible = false;
-                txbHeight.Visible = false;
+                txbWidth.Visible = false;
 
                 lblPredatorCount.Visible = false;
                 txbPredatorCount.Visible = false;

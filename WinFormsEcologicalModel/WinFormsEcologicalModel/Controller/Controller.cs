@@ -16,16 +16,6 @@ namespace WinFormsEcologicalModel
             _view = view;
         }
 
-        /// <summary>
-        /// Test test test
-        /// </summary>
-        /// <param name="width"></param>
-        /// <param name="height"></param>
-        /// <param name="predatorCount"></param>
-        /// <param name="preyCount"></param>
-        /// <param name="obstacleCount"></param>
-        /// <param name="iteretionsCount"></param>
-        /// <returns></returns>
         public string StartSimulation(int width, int height, int predatorCount, int preyCount,
             int obstacleCount, int iteretionsCount, int staticSuperPredator)
         {
@@ -56,7 +46,7 @@ namespace WinFormsEcologicalModel
             
             for (int n = 0; n < _iteretionsCount; n++)
             {
-                Thread.Sleep(100);
+                Thread.Sleep(500);
 
                 if (_terminted)
                 {

@@ -29,10 +29,10 @@ namespace WinFormsEcologicalModel
         /// </summary>
         private void InitializeComponent()
         {
-            this.txbWidth = new System.Windows.Forms.TextBox();
+            this.txbHeight = new System.Windows.Forms.TextBox();
             this.lblWidth = new System.Windows.Forms.Label();
             this.lblHeight = new System.Windows.Forms.Label();
-            this.txbHeight = new System.Windows.Forms.TextBox();
+            this.txbWidth = new System.Windows.Forms.TextBox();
             this.lblPredatorCount = new System.Windows.Forms.Label();
             this.txbPredatorCount = new System.Windows.Forms.TextBox();
             this.lblPreyCount = new System.Windows.Forms.Label();
@@ -51,16 +51,16 @@ namespace WinFormsEcologicalModel
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMainField)).BeginInit();
             this.SuspendLayout();
             // 
-            // txbWidth
+            // txbHeight
             // 
-            this.txbWidth.BackColor = System.Drawing.Color.White;
-            this.txbWidth.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbWidth.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.txbWidth.Location = new System.Drawing.Point(144, 123);
-            this.txbWidth.Name = "txbWidth";
-            this.txbWidth.Size = new System.Drawing.Size(125, 29);
-            this.txbWidth.TabIndex = 1;
-            this.txbWidth.Text = "25";
+            this.txbHeight.BackColor = System.Drawing.Color.White;
+            this.txbHeight.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbHeight.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.txbHeight.Location = new System.Drawing.Point(510, 122);
+            this.txbHeight.Name = "txbHeight";
+            this.txbHeight.Size = new System.Drawing.Size(125, 29);
+            this.txbHeight.TabIndex = 1;
+            this.txbHeight.Text = "10";
             // 
             // lblWidth
             // 
@@ -86,15 +86,15 @@ namespace WinFormsEcologicalModel
             this.lblHeight.TabIndex = 3;
             this.lblHeight.Text = "Height:";
             // 
-            // txbHeight
+            // txbWidth
             // 
-            this.txbHeight.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbHeight.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.txbHeight.Location = new System.Drawing.Point(509, 122);
-            this.txbHeight.Name = "txbHeight";
-            this.txbHeight.Size = new System.Drawing.Size(125, 29);
-            this.txbHeight.TabIndex = 4;
-            this.txbHeight.Text = "70";
+            this.txbWidth.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbWidth.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.txbWidth.Location = new System.Drawing.Point(144, 122);
+            this.txbWidth.Name = "txbWidth";
+            this.txbWidth.Size = new System.Drawing.Size(125, 29);
+            this.txbWidth.TabIndex = 4;
+            this.txbWidth.Text = "20";
             // 
             // lblPredatorCount
             // 
@@ -116,7 +116,7 @@ namespace WinFormsEcologicalModel
             this.txbPredatorCount.Name = "txbPredatorCount";
             this.txbPredatorCount.Size = new System.Drawing.Size(124, 29);
             this.txbPredatorCount.TabIndex = 6;
-            this.txbPredatorCount.Text = "20";
+            this.txbPredatorCount.Text = "70";
             // 
             // lblPreyCount
             // 
@@ -138,7 +138,7 @@ namespace WinFormsEcologicalModel
             this.txbPreyCount.Name = "txbPreyCount";
             this.txbPreyCount.Size = new System.Drawing.Size(125, 29);
             this.txbPreyCount.TabIndex = 8;
-            this.txbPreyCount.Text = "150";
+            this.txbPreyCount.Text = "40";
             // 
             // lblObstacleCount
             // 
@@ -160,7 +160,7 @@ namespace WinFormsEcologicalModel
             this.txbObstacleCount.Name = "txbObstacleCount";
             this.txbObstacleCount.Size = new System.Drawing.Size(128, 29);
             this.txbObstacleCount.TabIndex = 10;
-            this.txbObstacleCount.Text = "75";
+            this.txbObstacleCount.Text = "15";
             // 
             // lblIteretionsCount
             // 
@@ -170,9 +170,9 @@ namespace WinFormsEcologicalModel
             this.lblIteretionsCount.ForeColor = System.Drawing.Color.White;
             this.lblIteretionsCount.Location = new System.Drawing.Point(799, 90);
             this.lblIteretionsCount.Name = "lblIteretionsCount";
-            this.lblIteretionsCount.Size = new System.Drawing.Size(222, 29);
+            this.lblIteretionsCount.Size = new System.Drawing.Size(230, 29);
             this.lblIteretionsCount.TabIndex = 11;
-            this.lblIteretionsCount.Text = "Iteretions count";
+            this.lblIteretionsCount.Text = "Iteretions count:";
             // 
             // txbIteretionsCount
             // 
@@ -207,11 +207,11 @@ namespace WinFormsEcologicalModel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewMainField.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMainField.Location = new System.Drawing.Point(2, 122);
+            this.dataGridViewMainField.Location = new System.Drawing.Point(2, 171);
             this.dataGridViewMainField.Name = "dataGridViewMainField";
             this.dataGridViewMainField.RowHeadersWidth = 51;
             this.dataGridViewMainField.RowTemplate.Height = 29;
-            this.dataGridViewMainField.Size = new System.Drawing.Size(1131, 520);
+            this.dataGridViewMainField.Size = new System.Drawing.Size(1129, 478);
             this.dataGridViewMainField.TabIndex = 14;
             this.dataGridViewMainField.Visible = false;
             // 
@@ -272,18 +272,18 @@ namespace WinFormsEcologicalModel
             this.lblStaticSuperPredator.BackColor = System.Drawing.Color.Transparent;
             this.lblStaticSuperPredator.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblStaticSuperPredator.ForeColor = System.Drawing.Color.White;
-            this.lblStaticSuperPredator.Location = new System.Drawing.Point(421, 369);
+            this.lblStaticSuperPredator.Location = new System.Drawing.Point(376, 369);
             this.lblStaticSuperPredator.Name = "lblStaticSuperPredator";
-            this.lblStaticSuperPredator.Size = new System.Drawing.Size(293, 29);
+            this.lblStaticSuperPredator.Size = new System.Drawing.Size(381, 29);
             this.lblStaticSuperPredator.TabIndex = 19;
-            this.lblStaticSuperPredator.Text = "Static super predator";
+            this.lblStaticSuperPredator.Text = "Static super predator count:";
             // 
-            // Form1
+            // MainFieldView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WinFormsEcologicalModel.Properties.Resources.photo_2022_07_23_15_58_39;
-            this.ClientSize = new System.Drawing.Size(1136, 644);
+            this.ClientSize = new System.Drawing.Size(1134, 651);
             this.Controls.Add(this.lblStaticSuperPredator);
             this.Controls.Add(this.btnChangeMaxColor);
             this.Controls.Add(this.btnChangeMinColor);
@@ -299,11 +299,11 @@ namespace WinFormsEcologicalModel
             this.Controls.Add(this.lblPreyCount);
             this.Controls.Add(this.txbPredatorCount);
             this.Controls.Add(this.lblPredatorCount);
-            this.Controls.Add(this.txbHeight);
+            this.Controls.Add(this.txbWidth);
             this.Controls.Add(this.lblHeight);
             this.Controls.Add(this.lblWidth);
-            this.Controls.Add(this.txbWidth);
-            this.Name = "Form1";
+            this.Controls.Add(this.txbHeight);
+            this.Name = "MainFieldView";
             this.Text = "Ecological model";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMainField)).EndInit();
@@ -313,10 +313,10 @@ namespace WinFormsEcologicalModel
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txbWidth;
+        private System.Windows.Forms.TextBox txbHeight;
         private System.Windows.Forms.Label lblWidth;
         private System.Windows.Forms.Label lblHeight;
-        private System.Windows.Forms.TextBox txbHeight;
+        private System.Windows.Forms.TextBox txbWidth;
         private System.Windows.Forms.Label lblPredatorCount;
         private System.Windows.Forms.TextBox txbPredatorCount;
         private System.Windows.Forms.Label lblPreyCount;
